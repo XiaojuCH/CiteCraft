@@ -22,6 +22,27 @@ It gives you deliverables you can actually use:
 The product goal is not "better chat." The goal is a deterministic, traceable path from messy inputs to professional output.
 这不是另一个聊天壳，也不是泛 agent 平台；它的核心是 `evidence-bound deliverables`。
 
+## What It Looks Like
+
+Real screenshots from the local demo shell:
+
+<p align="center">
+  <img src="docs/assets/academia-en-home.png" alt="English academia homepage" width="32%" />
+  <img src="docs/assets/research-zh-home.png" alt="Chinese research consulting homepage" width="32%" />
+  <img src="docs/assets/brief-trace-en.png" alt="Brief with trace panel" width="32%" />
+</p>
+
+- `Academia` track: journal club and literature synthesis with cited deliverables.
+- `Research / Consulting` track: strategy brief prep from reports, market pages, and analyst notes.
+- `Trace Panel`: every important output node points back to a source chunk.
+
+## Why This Repo Is Different
+
+- It ships `deliverables`, not just answers.
+- It treats `traceability` as a first-class product primitive.
+- It keeps the core deterministic and reviewable before adding agent complexity.
+- It is designed so the community can later contribute templates, adapters, and deliverable types.
+
 ## P0 Principles
 
 - Every important claim should point back to a source chunk.
