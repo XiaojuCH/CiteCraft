@@ -4,8 +4,14 @@
 The codebase stays intentionally neutral while the brand is still provisional.
 
 > Turn messy sources into cited deliverables.
+>
+> 把杂乱资料变成带引用、可交付的成果。
+
+![CiteCraft workbench overview](apps/web/static/hero-workbench.svg)
 
 This project is building an `Academia-first, not academia-only` workbench for source-heavy knowledge work.
+它以学术场景作为首个演示入口，但底层结构从第一天就支持扩展到 research、consulting、policy 和更广的知识工作场景。
+
 You give it `PDFs`, `URLs`, and `markdown/text folders`.
 It gives you deliverables you can actually use:
 
@@ -14,6 +20,7 @@ It gives you deliverables you can actually use:
 - `slides`
 
 The product goal is not "better chat." The goal is a deterministic, traceable path from messy inputs to professional output.
+这不是另一个聊天壳，也不是泛 agent 平台；它的核心是 `evidence-bound deliverables`。
 
 ## P0 Principles
 

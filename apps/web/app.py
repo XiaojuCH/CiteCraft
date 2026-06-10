@@ -28,10 +28,51 @@ def _load_demo_run():
     return run_project(PROJECT_ROOT)
 
 
+def _homepage_payload(run):
+    brief = run.deliverables["brief"]
+    matrix = run.deliverables["literature_matrix"]
+    slides = run.deliverables["slides"]
+    first_row = matrix.rows[0]
+    cell_lookup = {(cell.row_id, cell.column_id): cell for cell in matrix.cells}
+    matrix_columns = []
+    for column in matrix.columns[:3]:
+        cell = cell_lookup[(first_row.row_id, column.column_id)]
+        matrix_columns.append(
+            {
+                "label": column.label,
+                "value": cell.value,
+                "trace_label": cell.trace_refs[0].locator.label if cell.trace_refs else "Narrative",
+            }
+        )
+
+    first_slide = slides.slides[0]
+    total_chunks = sum(len(document.chunks) for document in run.documents)
+    return {
+        "metrics": [
+            {"label_en": "Sources", "label_zh": "输入源", "value": str(len(run.documents))},
+            {"label_en": "Chunks", "label_zh": "源片段", "value": str(total_chunks)},
+            {"label_en": "Trace links", "label_zh": "可追溯链接", "value": str(len(run.trace_index))},
+        ],
+        "brief": {
+            "summary": brief.sections[0].items[0],
+            "finding": brief.sections[1].items[0],
+        },
+        "matrix": {
+            "row_label": first_row.label,
+            "columns": matrix_columns,
+        },
+        "slides": {
+            "title": first_slide.title,
+            "bullets": first_slide.bullets[:2],
+            "notes": first_slide.speaker_notes[:1],
+        },
+    }
+
+
 @APP.route("/")
 def index():
     run = _load_demo_run()
-    return render_template("index.html", run=run)
+    return render_template("index.html", run=run, homepage=_homepage_payload(run))
 
 
 @APP.route("/sources")
