@@ -1,18 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ html_lang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}CiteCraft Demo{% endblock %}</title>
+    <title>{% block title %}{{ t("page_title") }}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
   </head>
   <body>
     <header class="site-header">
-      <div class="brand">CiteCraft <span>provisional name</span></div>
-      <nav>
-        <a href="{{ url_for('index') }}">Demo</a>
-        <a href="{{ url_for('sources_index') }}">Sources</a>
-      </nav>
+      <div class="brand">CiteCraft <span>{{ t("brand_note") }}</span></div>
+      <div class="nav-cluster">
+        <nav>
+          <a href="{{ shell_url('index') }}">{{ t("nav_demo") }}</a>
+          <a href="{{ shell_url('sources_index') }}">{{ t("nav_sources") }}</a>
+        </nav>
+        <div class="lang-toggle" aria-label="Language switch">
+          <a class="{% if lang == 'en' %}active{% endif %}" href="{{ toggle_lang_url('en') }}">{{ t("lang_en") }}</a>
+          <a class="{% if lang == 'zh' %}active{% endif %}" href="{{ toggle_lang_url('zh') }}">{{ t("lang_zh") }}</a>
+        </div>
+      </div>
     </header>
     <main>
       {% block content %}{% endblock %}

@@ -2,28 +2,28 @@
 {% block title %}Trace {{ trace.trace_id }}{% endblock %}
 {% block content %}
 <section class="detail-header">
-  <a class="back-link" href="{{ url_for('index') }}">Back to demo</a>
-  <p class="eyebrow">trace inspector</p>
+  <a class="back-link" href="{{ shell_url('index') }}">{{ t("back_to_demo") }}</a>
+  <p class="eyebrow">{{ t("trace_inspector_eyebrow") }}</p>
   <h1>{{ trace.locator.label }}</h1>
-  <p class="lede">This is the source chunk behind a deliverable claim.</p>
+  <p class="lede">{{ t("trace_inspector_lede") }}</p>
 </section>
 
 <section class="detail-grid">
   <article class="card">
-    <h2>Trace metadata</h2>
+    <h2>{{ t("trace_metadata_heading") }}</h2>
     <ul class="meta-list">
-      <li><strong>Trace ID:</strong> {{ trace.trace_id }}</li>
-      <li><strong>Source ID:</strong> {{ trace.source_id }}</li>
-      <li><strong>Chunk ID:</strong> {{ trace.chunk_id }}</li>
-      <li><strong>Relation:</strong> {{ trace.relation }}</li>
-      <li><strong>Locator:</strong> {{ trace.locator.label }}</li>
+      <li><strong>{{ t("trace_id") }}:</strong> {{ trace.trace_id }}</li>
+      <li><strong>{{ t("trace_source_id") }}:</strong> {{ trace.source_id }}</li>
+      <li><strong>{{ t("trace_chunk_id") }}:</strong> {{ trace.chunk_id }}</li>
+      <li><strong>{{ t("trace_relation") }}:</strong> {{ trace.relation }}</li>
+      <li><strong>{{ t("trace_locator") }}:</strong> {{ trace.locator.label }}</li>
     </ul>
-    <p><a class="back-link" href="{{ url_for('source_view', source_id=trace.source_id) }}#{{ trace.chunk_id }}">Open source chunk in context</a></p>
-    <h3>Snippet</h3>
+    <p><a class="back-link" href="{{ shell_url('source_view', source_id=trace.source_id) }}#{{ trace.chunk_id }}">{{ t("open_chunk_context") }}</a></p>
+    <h3>{{ t("snippet_heading") }}</h3>
     <p>{{ trace.snippet }}</p>
   </article>
   <article class="card prose">
-    <h2>Source chunk</h2>
+    <h2>{{ t("source_chunk_heading") }}</h2>
     {% if chunk.section %}
     <p class="eyebrow">{{ chunk.section }}</p>
     {% endif %}

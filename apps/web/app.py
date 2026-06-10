@@ -5,13 +5,17 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from flask import Flask, abort, render_template
+from flask import Flask, abort, g, render_template, request, url_for
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SRC_ROOT = REPO_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
+WEB_ROOT = Path(__file__).resolve().parent
+if str(WEB_ROOT) not in sys.path:
+    sys.path.insert(0, str(WEB_ROOT))
 
+from i18n import DEFAULT_LANG, normalize_lang, translate  # noqa: E402
 from workbench.pipeline.run import run_project  # noqa: E402
 from workbench.renderers.traces import collect_traces  # noqa: E402
 
@@ -22,6 +26,50 @@ APP = Flask(
     static_folder=str(Path(__file__).resolve().parent / "static"),
 )
 PROJECT_ROOT = REPO_ROOT / "examples" / "academia" / "demo-01"
+
+
+@APP.before_request
+def set_lang():
+    requested = request.args.get("lang")
+    if requested:
+        g.lang = normalize_lang(requested)
+        g.persist_lang = True
+    else:
+        g.lang = normalize_lang(request.cookies.get("workbench_lang", DEFAULT_LANG))
+        g.persist_lang = False
+
+
+@APP.after_request
+def persist_lang(response):
+    if getattr(g, "persist_lang", False):
+        response.set_cookie("workbench_lang", g.lang, max_age=60 * 60 * 24 * 365, samesite="Lax")
+    return response
+
+
+@APP.context_processor
+def inject_template_helpers():
+    def t(key: str) -> str:
+        return translate(g.lang, key)
+
+    def shell_url(endpoint: str, **values) -> str:
+        values["lang"] = g.lang
+        return url_for(endpoint, **values)
+
+    def toggle_lang_url(target_lang: str) -> str:
+        values = dict(request.view_args or {})
+        for key, value in request.args.items():
+            if key != "lang":
+                values[key] = value
+        values["lang"] = normalize_lang(target_lang)
+        return url_for(request.endpoint or "index", **values)
+
+    return {
+        "lang": g.lang,
+        "html_lang": "zh-CN" if g.lang == "zh" else "en",
+        "t": t,
+        "shell_url": shell_url,
+        "toggle_lang_url": toggle_lang_url,
+    }
 
 
 def _load_demo_run():
@@ -41,7 +89,6 @@ def _homepage_payload(run):
             {
                 "label": column.label,
                 "value": cell.value,
-                "trace_label": cell.trace_refs[0].locator.label if cell.trace_refs else "Narrative",
             }
         )
 
@@ -49,9 +96,9 @@ def _homepage_payload(run):
     total_chunks = sum(len(document.chunks) for document in run.documents)
     return {
         "metrics": [
-            {"label_en": "Sources", "label_zh": "输入源", "value": str(len(run.documents))},
-            {"label_en": "Chunks", "label_zh": "源片段", "value": str(total_chunks)},
-            {"label_en": "Trace links", "label_zh": "可追溯链接", "value": str(len(run.trace_index))},
+            {"label_key": "metric_sources", "value": str(len(run.documents))},
+            {"label_key": "metric_chunks", "value": str(total_chunks)},
+            {"label_key": "metric_trace_links", "value": str(len(run.trace_index))},
         ],
         "brief": {
             "summary": brief.sections[0].items[0],

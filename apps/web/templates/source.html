@@ -2,25 +2,25 @@
 {% block title %}{{ document.label }}{% endblock %}
 {% block content %}
 <section class="detail-header">
-  <a class="back-link" href="{{ url_for('sources_index') }}">Back to sources</a>
+  <a class="back-link" href="{{ shell_url('sources_index') }}">{{ t("back_to_sources") }}</a>
   <p class="eyebrow">{{ document.source_type }}</p>
   <h1>{{ document.label }}</h1>
-  <p class="lede">Review the normalized chunks that feed the deliverables and traces.</p>
+  <p class="lede">{{ t("source_detail_lede") }}</p>
 </section>
 
 <section class="grid">
   <article class="card">
-    <h2>Document</h2>
+    <h2>{{ t("document_heading") }}</h2>
     <ul class="meta-list">
-      <li><strong>Source ID:</strong> {{ document.source_id }}</li>
-      <li><strong>Type:</strong> {{ document.source_type }}</li>
-      <li><strong>Chunk count:</strong> {{ document.chunks|length }}</li>
-      <li><strong>Root locator:</strong> {{ document.locator.label }}</li>
+      <li><strong>{{ t("document_source_id") }}:</strong> {{ document.source_id }}</li>
+      <li><strong>{{ t("document_type") }}:</strong> {{ document.source_type }}</li>
+      <li><strong>{{ t("document_chunk_count") }}:</strong> {{ document.chunks|length }}</li>
+      <li><strong>{{ t("document_root_locator") }}:</strong> {{ document.locator.label }}</li>
     </ul>
   </article>
   <article class="card">
-    <h2>Why it matters</h2>
-    <p>Every trace in the deliverable views resolves back to one of the chunks below.</p>
+    <h2>{{ t("why_it_matters_heading") }}</h2>
+    <p>{{ t("why_it_matters_body") }}</p>
   </article>
 </section>
 

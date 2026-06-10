@@ -1,26 +1,24 @@
 {% extends "layout.html" %}
-{% block title %}CiteCraft Demo{% endblock %}
+{% block title %}{{ t("page_title") }}{% endblock %}
 {% block content %}
 <section class="hero hero-split">
   <div class="hero-copy">
-    <p class="eyebrow">Academia-first, not academia-only. / 学术优先，但不止学术。</p>
-    <h1>Turn messy sources into cited deliverables.</h1>
-    <p class="hero-zh">把杂乱资料变成带引用、可直接交付的成果。</p>
-    <p class="lede">Upload PDFs, URLs, and note folders. Get a cited brief, literature matrix, and slide deck you can actually use.</p>
-    <p class="lede lede-zh">上传 PDF、网页和笔记目录，生成可回链的 brief、文献矩阵和演示稿。</p>
+    <p class="eyebrow">{{ t("hero_eyebrow") }}</p>
+    <h1>{{ t("hero_title") }}</h1>
+    <p class="lede">{{ t("hero_lede") }}</p>
     <div class="hero-badges">
-      <span class="hero-badge">1-minute demo / 1 分钟跑通</span>
-      <span class="hero-badge">Trace every claim / 关键结论可追溯</span>
-      <span class="hero-badge">Markdown-first / 人类可读优先</span>
+      <span class="hero-badge">{{ t("hero_badge_demo") }}</span>
+      <span class="hero-badge">{{ t("hero_badge_trace") }}</span>
+      <span class="hero-badge">{{ t("hero_badge_markdown") }}</span>
     </div>
   </div>
   <div class="hero-visual card">
-    <img class="hero-illustration" src="{{ url_for('static', filename='hero-workbench.svg') }}" alt="Messy sources flow into cited brief, matrix, and slides." />
+    <img class="hero-illustration" src="{{ url_for('static', filename='hero-workbench.svg') }}" alt="{{ t('hero_illustration_alt') }}" />
     <div class="metric-strip">
       {% for metric in homepage.metrics %}
       <div class="metric-pill">
         <strong>{{ metric.value }}</strong>
-        <span>{{ metric.label_en }} / {{ metric.label_zh }}</span>
+        <span>{{ t(metric.label_key) }}</span>
       </div>
       {% endfor %}
     </div>
@@ -28,30 +26,30 @@
 </section>
 
 <section class="section-heading">
-  <p class="eyebrow">Visual proof / 结果预览</p>
-  <h2>Show the output, not the agent internals.</h2>
-  <p class="lede">The homepage should make the result legible in seconds. These cards are built from the same demo artifacts the workbench produces.</p>
+  <p class="eyebrow">{{ t("section_visual_proof_eyebrow") }}</p>
+  <h2>{{ t("section_visual_proof_title") }}</h2>
+  <p class="lede">{{ t("section_visual_proof_lede") }}</p>
 </section>
 
 <section class="preview-grid">
-  <a class="preview-card" href="{{ url_for('deliverable_view', deliverable_key='brief') }}">
+  <a class="preview-card" href="{{ shell_url('deliverable_view', deliverable_key='brief') }}">
     <div class="preview-topline">
       <span class="kicker">cited brief</span>
       <span class="trace-chip">{{ homepage.brief.summary.trace_refs[0].locator.label }}</span>
     </div>
-    <h3>Brief / 摘要简报</h3>
+    <h3>{{ t("preview_brief_title") }}</h3>
     <p class="preview-text">{{ homepage.brief.summary.text }}</p>
     <div class="preview-divider"></div>
-    <p class="preview-subtitle">Key finding / 核心结论</p>
+    <p class="preview-subtitle">{{ t("preview_key_finding") }}</p>
     <p class="preview-text">{{ homepage.brief.finding.text }}</p>
   </a>
 
-  <a class="preview-card preview-matrix" href="{{ url_for('deliverable_view', deliverable_key='literature_matrix') }}">
+  <a class="preview-card preview-matrix" href="{{ shell_url('deliverable_view', deliverable_key='literature_matrix') }}">
     <div class="preview-topline">
       <span class="kicker">literature matrix</span>
       <span class="trace-chip">{{ homepage.matrix.row_label }}</span>
     </div>
-    <h3>Matrix / 文献矩阵</h3>
+    <h3>{{ t("preview_matrix_title") }}</h3>
     <div class="mini-table">
       {% for column in homepage.matrix.columns %}
       <div class="mini-table-row">
@@ -62,12 +60,12 @@
     </div>
   </a>
 
-  <a class="preview-card preview-slides" href="{{ url_for('deliverable_view', deliverable_key='slides') }}">
+  <a class="preview-card preview-slides" href="{{ shell_url('deliverable_view', deliverable_key='slides') }}">
     <div class="preview-topline">
       <span class="kicker">slides</span>
       <span class="trace-chip">HTML / Markdown</span>
     </div>
-    <h3>Slides / 演示提纲</h3>
+    <h3>{{ t("preview_slides_title") }}</h3>
     <p class="slide-preview-title">{{ homepage.slides.title }}</p>
     <ul class="slide-preview-list">
       {% for bullet in homepage.slides.bullets %}
@@ -75,59 +73,59 @@
       {% endfor %}
     </ul>
     <div class="preview-divider"></div>
-    <p class="preview-subtitle">Speaker note / 讲者备注</p>
+    <p class="preview-subtitle">{{ t("preview_speaker_note") }}</p>
     <p class="preview-text">{{ homepage.slides.notes[0].text }}</p>
   </a>
 </section>
 
 <section class="grid">
   <article class="card">
-    <h2>Sample project / 示例项目</h2>
+    <h2>{{ t("sample_project_heading") }}</h2>
     <p><strong>{{ run.project.title }}</strong></p>
     <p>{{ run.project.slide_goal }}</p>
   </article>
   <article class="card">
-    <h2>Inputs / 输入</h2>
+    <h2>{{ t("inputs_heading") }}</h2>
     <ul>
       {% for document in run.documents %}
-      <li><a href="{{ url_for('source_view', source_id=document.source_id) }}">{{ document.label }}</a> <span class="pill">{{ document.source_type }}</span></li>
+      <li><a href="{{ shell_url('source_view', source_id=document.source_id) }}">{{ document.label }}</a> <span class="pill">{{ document.source_type }}</span></li>
       {% endfor %}
     </ul>
   </article>
   <article class="card">
-    <h2>1-minute flow / 1 分钟路径</h2>
+    <h2>{{ t("flow_heading") }}</h2>
     <ol>
-      <li>Open the brief and inspect traced findings.</li>
-      <li>Open the matrix and inspect one factual cell.</li>
-      <li>Open the slides preview and inspect one bullet trace.</li>
-      <li>Use the trace list to jump back to source chunks.</li>
+      <li>{{ t("flow_step_1") }}</li>
+      <li>{{ t("flow_step_2") }}</li>
+      <li>{{ t("flow_step_3") }}</li>
+      <li>{{ t("flow_step_4") }}</li>
     </ol>
   </article>
 </section>
 
 <section class="grid">
   <article class="card">
-    <h2>Why it spreads / 为什么容易传播</h2>
+    <h2>{{ t("why_spreads_heading") }}</h2>
     <ul>
-      <li>One sentence explains the value.</li>
-      <li>The result is visible before the architecture is explained.</li>
-      <li>Every important node can be traced back to a source chunk.</li>
+      <li>{{ t("why_spreads_1") }}</li>
+      <li>{{ t("why_spreads_2") }}</li>
+      <li>{{ t("why_spreads_3") }}</li>
     </ul>
   </article>
   <article class="card">
-    <h2>System shape / 系统形态</h2>
+    <h2>{{ t("system_shape_heading") }}</h2>
     <ul>
-      <li>Internal canonical: structured deliverable model.</li>
-      <li>Human-readable canonical: markdown-first.</li>
-      <li>Render targets today: markdown and HTML.</li>
+      <li>{{ t("system_shape_1") }}</li>
+      <li>{{ t("system_shape_2") }}</li>
+      <li>{{ t("system_shape_3") }}</li>
     </ul>
   </article>
   <article class="card">
-    <h2>What comes next / 下一步</h2>
+    <h2>{{ t("next_heading") }}</h2>
     <ul>
-      <li>Provider-backed generation on top of the same contracts.</li>
-      <li>More templates, not more agent theater.</li>
-      <li>One non-academic demo to prove category breadth.</li>
+      <li>{{ t("next_1") }}</li>
+      <li>{{ t("next_2") }}</li>
+      <li>{{ t("next_3") }}</li>
     </ul>
   </article>
 </section>

@@ -2,7 +2,7 @@
 {% block title %}{{ deliverable.title }}{% endblock %}
 {% block content %}
 <section class="detail-header">
-  <a class="back-link" href="{{ url_for('index') }}">Back to demo</a>
+  <a class="back-link" href="{{ shell_url('index') }}">{{ t("back_to_demo") }}</a>
   <p class="eyebrow">{{ deliverable_key.replace('_', ' ') }}</p>
   <h1>{{ deliverable.title }}</h1>
 </section>
@@ -12,12 +12,12 @@
     {{ content_html|safe }}
   </article>
   <aside class="card trace-panel">
-    <h2>Trace Panel</h2>
-    <p>Every entry below points back to a source chunk.</p>
+    <h2>{{ t("deliverable_trace_heading") }}</h2>
+    <p>{{ t("deliverable_trace_body") }}</p>
     <ul>
       {% for trace in traces %}
       <li>
-        <strong><a href="{{ url_for('trace_view', trace_id=trace.trace_id) }}">{{ trace.locator.label }}</a></strong>
+        <strong><a href="{{ shell_url('trace_view', trace_id=trace.trace_id) }}">{{ trace.locator.label }}</a></strong>
         <div>{{ trace.snippet }}</div>
         <small>{{ trace.source_id }} | {{ trace.chunk_id }}</small>
       </li>

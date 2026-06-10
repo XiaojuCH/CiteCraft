@@ -36,11 +36,45 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+  gap: 16px;
 }
 
 .brand {
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.nav-cluster {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+nav {
+  display: flex;
+  gap: 14px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 250, 244, 0.9);
+}
+
+.lang-toggle a {
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.lang-toggle a.active {
+  background: var(--ink);
+  color: var(--panel);
 }
 
 .brand span,
@@ -73,16 +107,6 @@ small {
 .lede {
   font-size: 1.15rem;
   max-width: 52rem;
-}
-
-.hero-zh {
-  margin: -4px 0 18px;
-  font-size: clamp(1.1rem, 3vw, 1.65rem);
-  color: var(--accent-2);
-}
-
-.lede-zh {
-  margin-top: -6px;
 }
 
 .hero-badges,
@@ -342,7 +366,11 @@ small {
 
 @media (max-width: 900px) {
   .hero-split,
-  .detail-grid {
+  .detail-grid,
+  .site-header,
+  .nav-cluster {
     grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
