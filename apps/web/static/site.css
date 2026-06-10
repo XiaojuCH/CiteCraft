@@ -170,7 +170,8 @@ small {
 .deliverables,
 .detail-grid,
 .chunk-list,
-.preview-grid {
+.preview-grid,
+.track-grid {
   display: grid;
   gap: 18px;
 }
@@ -190,6 +191,11 @@ small {
   margin-bottom: 32px;
 }
 
+.track-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-bottom: 28px;
+}
+
 .chunk-list {
   margin-bottom: 40px;
 }
@@ -201,7 +207,8 @@ small {
 
 .card,
 .deliverable-card,
-.preview-card {
+.preview-card,
+.track-card {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 22px;
@@ -210,13 +217,15 @@ small {
 }
 
 .deliverable-card,
-.preview-card {
+.preview-card,
+.track-card {
   text-decoration: none;
   transition: transform 150ms ease, border-color 150ms ease;
 }
 
 .deliverable-card:hover,
-.preview-card:hover {
+.preview-card:hover,
+.track-card:hover {
   transform: translateY(-2px);
   border-color: var(--accent);
 }
@@ -231,6 +240,11 @@ small {
 .preview-card {
   position: relative;
   overflow: hidden;
+}
+
+.track-card.active {
+  border-color: var(--accent-2);
+  box-shadow: 0 10px 30px rgba(29, 107, 98, 0.08);
 }
 
 .preview-card::after {

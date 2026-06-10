@@ -1,0 +1,36 @@
+project_id: research-demo-01
+title: "Strategy memo prep for AI due diligence deliverables"
+audience: "Research lead preparing a client-ready strategy brief"
+positioning: "Academia-first, not academia-only."
+requested_deliverables:
+  - brief
+  - literature_matrix
+  - slides
+demo_order:
+  - brief
+  - literature_matrix
+  - slides
+comparison_dimensions:
+  - Core claim
+  - Evidence or method
+  - Business relevance
+  - Risks
+brief_focus: "Summarize how evidence-backed deliverables help research and consulting teams turn scattered market inputs into client-ready outputs."
+slide_goal: "Prepare a five-slide executive presentation showing why cited briefs, comparison matrices, and slides are the fastest trustworthy path from market inputs to strategy output."
+sources:
+  - source_id: src_pdf_01
+    type: pdf
+    label: "Evidence-Linked Strategy Workflows"
+    path: inputs/pdf/report-01.pdf
+  - source_id: src_url_01
+    type: url
+    label: "Consulting Playbook: Reviewable AI Outputs"
+    url: https://example.com/consulting-playbook-reviewable-ai-outputs
+    cache_path: fixtures/url-cache/url-01.md
+  - source_id: src_folder_01
+    type: folder
+    label: "Analyst notes"
+    path: inputs/folder/notes
+metadata:
+  brand_state: provisional
+

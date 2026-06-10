@@ -15,7 +15,7 @@ def _load_app_module():
 def test_demo_routes_return_success():
     module = _load_app_module()
     client = module.APP.test_client()
-    for path in ["/", "/sources", "/sources/src_pdf_01", "/deliverables/brief", "/deliverables/literature_matrix", "/deliverables/slides", "/traces/trc_brief_summary_01"]:
+    for path in ["/", "/?project=research-demo-01", "/sources", "/sources/src_pdf_01", "/deliverables/brief", "/deliverables/literature_matrix", "/deliverables/slides", "/traces/trc_brief_summary_01"]:
         response = client.get(path)
         assert response.status_code == 200
 
@@ -48,3 +48,12 @@ def test_sources_page_uses_chinese_when_requested():
     html = response.get_data(as_text=True)
     assert "输入资料" in html
     assert "Back to demo" not in html
+
+
+def test_homepage_can_switch_to_research_demo():
+    module = _load_app_module()
+    client = module.APP.test_client()
+    response = client.get("/?project=research-demo-01")
+    html = response.get_data(as_text=True)
+    assert "Strategy memo prep for AI due diligence deliverables" in html
+    assert "project=research-demo-01" in html

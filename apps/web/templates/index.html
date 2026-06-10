@@ -31,6 +31,25 @@
   <p class="lede">{{ t("section_visual_proof_lede") }}</p>
 </section>
 
+<section class="section-heading">
+  <p class="eyebrow">{{ t("track_eyebrow") }}</p>
+  <h2>{{ t("track_heading") }}</h2>
+  <p class="lede">{{ t("track_lede") }}</p>
+</section>
+
+<section class="track-grid">
+  {% for project in project_options %}
+  <a class="track-card {% if project.key == project_key %}active{% endif %}" href="{{ toggle_project_url(project.key) }}">
+    <div class="preview-topline">
+      <span class="kicker">{{ project.key }}</span>
+      <span class="trace-chip">{% if project.key == project_key %}{{ t("track_current") }}{% else %}{{ t("track_open") }}{% endif %}</span>
+    </div>
+    <h3>{{ t(project.title_key) }}</h3>
+    <p class="preview-text">{{ t(project.desc_key) }}</p>
+  </a>
+  {% endfor %}
+</section>
+
 <section class="preview-grid">
   <a class="preview-card" href="{{ shell_url('deliverable_view', deliverable_key='brief') }}">
     <div class="preview-topline">

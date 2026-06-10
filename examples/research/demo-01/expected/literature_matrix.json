@@ -1,0 +1,395 @@
+{
+  "deliverable_id": "matrix-demo-01",
+  "deliverable_type": "literature_matrix",
+  "version": "0.1",
+  "project_id": "research-demo-01",
+  "title": "Literature Matrix",
+  "source_ids": [
+    "src_pdf_01",
+    "src_url_01",
+    "src_folder_01"
+  ],
+  "columns": [
+    {
+      "column_id": "matrix.col.01",
+      "label": "Core claim"
+    },
+    {
+      "column_id": "matrix.col.02",
+      "label": "Evidence or method"
+    },
+    {
+      "column_id": "matrix.col.03",
+      "label": "Business relevance"
+    },
+    {
+      "column_id": "matrix.col.04",
+      "label": "Risks"
+    }
+  ],
+  "rows": [
+    {
+      "row_id": "matrix.row.01",
+      "source_id": "src_pdf_01",
+      "label": "Evidence-Linked Strategy Workflows"
+    },
+    {
+      "row_id": "matrix.row.02",
+      "source_id": "src_url_01",
+      "label": "Consulting Playbook: Reviewable AI Outputs"
+    },
+    {
+      "row_id": "matrix.row.03",
+      "source_id": "src_folder_01",
+      "label": "Analyst notes"
+    }
+  ],
+  "cells": [
+    {
+      "node_id": "matrix.cell.row01.col01",
+      "row_id": "matrix.row.01",
+      "column_id": "matrix.col.01",
+      "value": "Finding 1: Traceable claims reduce review cycles in client-facing strategy work.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_01_matrix_col_01",
+          "source_id": "src_pdf_01",
+          "chunk_id": "src_pdf_01-chunk-004",
+          "relation": "supports",
+          "locator": {
+            "label": "report-01.pdf p.1",
+            "page": 1,
+            "section": null,
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\pdf\\report-01.pdf",
+            "url": null
+          },
+          "snippet": "Finding 1: Traceable claims reduce review cycles in client-facing strategy work.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row01.col02",
+      "row_id": "matrix.row.01",
+      "column_id": "matrix.col.02",
+      "value": "Method: The workflow normalizes reports, websites, and notes into reviewable source chunks.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_01_matrix_col_02",
+          "source_id": "src_pdf_01",
+          "chunk_id": "src_pdf_01-chunk-003",
+          "relation": "supports",
+          "locator": {
+            "label": "report-01.pdf p.1",
+            "page": 1,
+            "section": null,
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\pdf\\report-01.pdf",
+            "url": null
+          },
+          "snippet": "Method: The workflow normalizes reports, websites, and notes into reviewable source chunks.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row01.col03",
+      "row_id": "matrix.row.01",
+      "column_id": "matrix.col.03",
+      "value": "Finding 2: Briefs, comparison matrices, and slides are the most reusable first outputs.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_01_matrix_col_03",
+          "source_id": "src_pdf_01",
+          "chunk_id": "src_pdf_01-chunk-005",
+          "relation": "supports",
+          "locator": {
+            "label": "report-01.pdf p.1",
+            "page": 1,
+            "section": null,
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\pdf\\report-01.pdf",
+            "url": null
+          },
+          "snippet": "Finding 2: Briefs, comparison matrices, and slides are the most reusable first outputs.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row01.col04",
+      "row_id": "matrix.row.01",
+      "column_id": "matrix.col.04",
+      "value": "Limitation: Analysts still need to judge framing, novelty, and client sensitivity.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_01_matrix_col_04",
+          "source_id": "src_pdf_01",
+          "chunk_id": "src_pdf_01-chunk-006",
+          "relation": "supports",
+          "locator": {
+            "label": "report-01.pdf p.1",
+            "page": 1,
+            "section": null,
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\pdf\\report-01.pdf",
+            "url": null
+          },
+          "snippet": "Limitation: Analysts still need to judge framing, novelty, and client sensitivity.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row02.col01",
+      "row_id": "matrix.row.02",
+      "column_id": "matrix.col.01",
+      "value": "Research and consulting teams adopt AI tooling faster when the first output already looks like something a manager ca...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_02_matrix_col_01",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-002",
+          "relation": "supports",
+          "locator": {
+            "label": "Consulting Playbook: Reviewable AI Outputs",
+            "page": null,
+            "section": "Consulting Playbook: Reviewable AI Outputs",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+          },
+          "snippet": "Research and consulting teams adopt AI tooling faster when the first output already looks like something a manager can review and reuse.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row02.col02",
+      "row_id": "matrix.row.02",
+      "column_id": "matrix.col.02",
+      "value": "Show the jump from a deliverable claim back to a source chunk, even when the locator is only a section, file path, or...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_02_matrix_col_02",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-006",
+          "relation": "supports",
+          "locator": {
+            "label": "Practical guidance",
+            "page": null,
+            "section": "Practical guidance",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+          },
+          "snippet": "Show the jump from a deliverable claim back to a source chunk, even when the locator is only a section, file path, or page label in P0.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row02.col03",
+      "row_id": "matrix.row.02",
+      "column_id": "matrix.col.03",
+      "value": "Research and consulting teams adopt AI tooling faster when the first output already looks like something a manager ca...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_02_matrix_col_03",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-002",
+          "relation": "supports",
+          "locator": {
+            "label": "Consulting Playbook: Reviewable AI Outputs",
+            "page": null,
+            "section": "Consulting Playbook: Reviewable AI Outputs",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+          },
+          "snippet": "Research and consulting teams adopt AI tooling faster when the first output already looks like something a manager can review and reuse.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row02.col04",
+      "row_id": "matrix.row.02",
+      "column_id": "matrix.col.04",
+      "value": "Perfect export fidelity can wait until the content and trace quality already survive stakeholder review.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_02_matrix_col_04",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-009",
+          "relation": "supports",
+          "locator": {
+            "label": "Risks",
+            "page": null,
+            "section": "Risks",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+          },
+          "snippet": "Perfect export fidelity can wait until the content and trace quality already survive stakeholder review.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row03.col01",
+      "row_id": "matrix.row.03",
+      "column_id": "matrix.col.01",
+      "value": "This demo should show that research and consulting teams can turn scattered market inputs into client-ready outputs w...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_03_matrix_col_01",
+          "source_id": "src_folder_01",
+          "chunk_id": "src_folder_01-chunk-002",
+          "relation": "supports",
+          "locator": {
+            "label": "framing.md",
+            "page": null,
+            "section": "Framing",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\folder\\notes\\framing.md",
+            "url": null
+          },
+          "snippet": "This demo should show that research and consulting teams can turn scattered market inputs into client-ready outputs without sacrificing traceability.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row03.col02",
+      "row_id": "matrix.row.03",
+      "column_id": "matrix.col.02",
+      "value": "The matrix should let an analyst compare sources quickly without losing the path back to evidence.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_03_matrix_col_02",
+          "source_id": "src_folder_01",
+          "chunk_id": "src_folder_01-chunk-014",
+          "relation": "supports",
+          "locator": {
+            "label": "takeaways.txt",
+            "page": null,
+            "section": "takeaways.txt",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\folder\\notes\\takeaways.txt",
+            "url": null
+          },
+          "snippet": "The matrix should let an analyst compare sources quickly without losing the path back to evidence.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row03.col03",
+      "row_id": "matrix.row.03",
+      "column_id": "matrix.col.03",
+      "value": "The audience is a strategy lead who wants a cited brief, a comparison matrix, and a slide outline that can survive re...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_03_matrix_col_03",
+          "source_id": "src_folder_01",
+          "chunk_id": "src_folder_01-chunk-003",
+          "relation": "supports",
+          "locator": {
+            "label": "framing.md",
+            "page": null,
+            "section": "Framing",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\folder\\notes\\framing.md",
+            "url": null
+          },
+          "snippet": "The audience is a strategy lead who wants a cited brief, a comparison matrix, and a slide outline that can survive review.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row03.col04",
+      "row_id": "matrix.row.03",
+      "column_id": "matrix.col.04",
+      "value": "This demo should show that research and consulting teams can turn scattered market inputs into client-ready outputs w...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_03_matrix_col_04",
+          "source_id": "src_folder_01",
+          "chunk_id": "src_folder_01-chunk-002",
+          "relation": "supports",
+          "locator": {
+            "label": "framing.md",
+            "page": null,
+            "section": "Framing",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\folder\\notes\\framing.md",
+            "url": null
+          },
+          "snippet": "This demo should show that research and consulting teams can turn scattered market inputs into client-ready outputs without sacrificing traceability.",
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "synthesis": [
+    {
+      "node_id": "matrix.synthesis.01",
+      "text": "All three sources treat traceability as the trust lever that turns raw material into reusable outputs.",
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_synth_01",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-006",
+          "relation": "supports",
+          "locator": {
+            "label": "Practical guidance",
+            "page": null,
+            "section": "Practical guidance",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+          },
+          "snippet": "Show the jump from a deliverable claim back to a source chunk, even when the locator is only a section, file path, or page label in P0.",
+          "metadata": {}
+        }
+      ],
+      "kind": "synthesis",
+      "title": "Common thread"
+    },
+    {
+      "node_id": "matrix.synthesis.02",
+      "text": "Slides stay in P0 because visible, content-first deliverables are easier to demo than perfect export fidelity.",
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_synth_02",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-009",
+          "relation": "supports",
+          "locator": {
+            "label": "Risks",
+            "page": null,
+            "section": "Risks",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+          },
+          "snippet": "Perfect export fidelity can wait until the content and trace quality already survive stakeholder review.",
+          "metadata": {}
+        }
+      ],
+      "kind": "synthesis",
+      "title": "Delivery bias"
+    }
+  ],
+  "render_hints": {
+    "tone": "professional",
+    "citation_mode": "inline_badge",
+    "audience_style": "academia",
+    "density": "medium",
+    "extras": {
+      "compactness": "comfortable",
+      "show_source_column": "true"
+    }
+  }
+}

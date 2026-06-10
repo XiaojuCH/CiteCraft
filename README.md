@@ -54,6 +54,17 @@ D:\anaconda3\python.exe apps\web\app.py
 
 Then open `http://127.0.0.1:5000`.
 
+The local demo shell now supports:
+
+- English / Chinese UI switching
+- an `academia` track and a `research / consulting` track
+- traceable preview flows for `brief`, `literature_matrix`, and `slides`
+
+Try:
+
+- `http://127.0.0.1:5000/?lang=en&project=academia-demo-01`
+- `http://127.0.0.1:5000/?lang=zh&project=research-demo-01`
+
 ## Optional Model Provider
 
 The default demo is deterministic so the 1-minute path stays stable.

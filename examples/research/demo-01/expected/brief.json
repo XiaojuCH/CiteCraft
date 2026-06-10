@@ -1,0 +1,233 @@
+{
+  "deliverable_id": "brief-demo-01",
+  "deliverable_type": "brief",
+  "version": "0.1",
+  "project_id": "research-demo-01",
+  "title": "Cited Brief",
+  "objective": "Summarize how evidence-backed deliverables help research and consulting teams turn scattered market inputs into client-ready outputs.",
+  "source_ids": [
+    "src_pdf_01",
+    "src_url_01",
+    "src_folder_01"
+  ],
+  "sections": [
+    {
+      "node_id": "brief.section.summary",
+      "title": "Summary",
+      "items": [
+        {
+          "node_id": "brief.summary.01",
+          "text": "This demo should show that research and consulting teams can turn scattered market inputs into client-ready outputs without sacrificing traceability.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_summary_01",
+              "source_id": "src_folder_01",
+              "chunk_id": "src_folder_01-chunk-002",
+              "relation": "supports",
+              "locator": {
+                "label": "framing.md",
+                "page": null,
+                "section": "Framing",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\folder\\notes\\framing.md",
+                "url": null
+              },
+              "snippet": "This demo should show that research and consulting teams can turn scattered market inputs into client-ready outputs without sacrificing traceability.",
+              "metadata": {}
+            }
+          ],
+          "kind": "summary",
+          "title": ""
+        }
+      ]
+    },
+    {
+      "node_id": "brief.section.key_findings",
+      "title": "Key Findings",
+      "items": [
+        {
+          "node_id": "brief.finding.01",
+          "text": "Finding 2: Briefs, comparison matrices, and slides are the most reusable first outputs.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_finding_01",
+              "source_id": "src_pdf_01",
+              "chunk_id": "src_pdf_01-chunk-005",
+              "relation": "supports",
+              "locator": {
+                "label": "report-01.pdf p.1",
+                "page": 1,
+                "section": null,
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\pdf\\report-01.pdf",
+                "url": null
+              },
+              "snippet": "Finding 2: Briefs, comparison matrices, and slides are the most reusable first outputs.",
+              "metadata": {}
+            }
+          ],
+          "kind": "finding",
+          "title": "Key finding 1"
+        },
+        {
+          "node_id": "brief.finding.02",
+          "text": "Finding 1: Traceable claims reduce review cycles in client-facing strategy work.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_finding_02",
+              "source_id": "src_pdf_01",
+              "chunk_id": "src_pdf_01-chunk-004",
+              "relation": "supports",
+              "locator": {
+                "label": "report-01.pdf p.1",
+                "page": 1,
+                "section": null,
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\pdf\\report-01.pdf",
+                "url": null
+              },
+              "snippet": "Finding 1: Traceable claims reduce review cycles in client-facing strategy work.",
+              "metadata": {}
+            }
+          ],
+          "kind": "finding",
+          "title": "Key finding 2"
+        },
+        {
+          "node_id": "brief.finding.03",
+          "text": "Research and consulting teams adopt AI tooling faster when the first output already looks like something a manager can review and reuse.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_finding_03",
+              "source_id": "src_url_01",
+              "chunk_id": "src_url_01-chunk-002",
+              "relation": "supports",
+              "locator": {
+                "label": "Consulting Playbook: Reviewable AI Outputs",
+                "page": null,
+                "section": "Consulting Playbook: Reviewable AI Outputs",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+                "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+              },
+              "snippet": "Research and consulting teams adopt AI tooling faster when the first output already looks like something a manager can review and reuse.",
+              "metadata": {}
+            }
+          ],
+          "kind": "finding",
+          "title": "Key finding 3"
+        }
+      ]
+    },
+    {
+      "node_id": "brief.section.limitations",
+      "title": "Limitations",
+      "items": [
+        {
+          "node_id": "brief.limitation.01",
+          "text": "Perfect export fidelity can wait until the content and trace quality already survive stakeholder review.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_limitation_01",
+              "source_id": "src_url_01",
+              "chunk_id": "src_url_01-chunk-009",
+              "relation": "supports",
+              "locator": {
+                "label": "Risks",
+                "page": null,
+                "section": "Risks",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+                "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+              },
+              "snippet": "Perfect export fidelity can wait until the content and trace quality already survive stakeholder review.",
+              "metadata": {}
+            }
+          ],
+          "kind": "limitation",
+          "title": ""
+        },
+        {
+          "node_id": "brief.limitation.02",
+          "text": "Strategy teams lose trust quickly if AI output sounds polished but cannot be traced to market evidence.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_limitation_02",
+              "source_id": "src_url_01",
+              "chunk_id": "src_url_01-chunk-008",
+              "relation": "supports",
+              "locator": {
+                "label": "Risks",
+                "page": null,
+                "section": "Risks",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+                "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+              },
+              "snippet": "Strategy teams lose trust quickly if AI output sounds polished but cannot be traced to market evidence.",
+              "metadata": {}
+            }
+          ],
+          "kind": "limitation",
+          "title": ""
+        }
+      ]
+    },
+    {
+      "node_id": "brief.section.open_questions",
+      "title": "Open Questions",
+      "items": [
+        {
+          "node_id": "brief.question.01",
+          "text": "How should we expand templates for market mapping, diligence, and vendor comparison without making the product feel generic?",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_question_01",
+              "source_id": "src_folder_01",
+              "chunk_id": "src_folder_01-chunk-008",
+              "relation": "supports",
+              "locator": {
+                "label": "questions.md",
+                "page": null,
+                "section": "Open Questions",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\folder\\notes\\questions.md",
+                "url": null
+              },
+              "snippet": "How should we expand templates for market mapping, diligence, and vendor comparison without making the product feel generic?",
+              "metadata": {}
+            }
+          ],
+          "kind": "question",
+          "title": ""
+        },
+        {
+          "node_id": "brief.question.02",
+          "text": "What is the minimum evidence granularity needed before a client-facing strategy note feels trustworthy?",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_question_02",
+              "source_id": "src_folder_01",
+              "chunk_id": "src_folder_01-chunk-007",
+              "relation": "supports",
+              "locator": {
+                "label": "questions.md",
+                "page": null,
+                "section": "Open Questions",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\folder\\notes\\questions.md",
+                "url": null
+              },
+              "snippet": "What is the minimum evidence granularity needed before a client-facing strategy note feels trustworthy?",
+              "metadata": {}
+            }
+          ],
+          "kind": "question",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "render_hints": {
+    "tone": "professional",
+    "citation_mode": "inline_badge",
+    "audience_style": "academia",
+    "density": "medium",
+    "extras": {
+      "show_trace_badges": "true",
+      "section_order": "summary,key_findings,limitations,open_questions"
+    }
+  }
+}

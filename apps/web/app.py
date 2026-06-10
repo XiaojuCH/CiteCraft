@@ -25,7 +25,19 @@ APP = Flask(
     template_folder=str(Path(__file__).resolve().parent / "templates"),
     static_folder=str(Path(__file__).resolve().parent / "static"),
 )
-PROJECT_ROOT = REPO_ROOT / "examples" / "academia" / "demo-01"
+PROJECTS = {
+    "academia-demo-01": {
+        "root": REPO_ROOT / "examples" / "academia" / "demo-01",
+        "title_key": "track_academia_title",
+        "desc_key": "track_academia_desc",
+    },
+    "research-demo-01": {
+        "root": REPO_ROOT / "examples" / "research" / "demo-01",
+        "title_key": "track_research_title",
+        "desc_key": "track_research_desc",
+    },
+}
+DEFAULT_PROJECT_KEY = "academia-demo-01"
 
 
 @APP.before_request
@@ -37,12 +49,17 @@ def set_lang():
     else:
         g.lang = normalize_lang(request.cookies.get("workbench_lang", DEFAULT_LANG))
         g.persist_lang = False
+    project_key = request.args.get("project") or request.cookies.get("workbench_project", DEFAULT_PROJECT_KEY)
+    g.project_key = project_key if project_key in PROJECTS else DEFAULT_PROJECT_KEY
+    g.persist_project = request.args.get("project") in PROJECTS
 
 
 @APP.after_request
 def persist_lang(response):
     if getattr(g, "persist_lang", False):
         response.set_cookie("workbench_lang", g.lang, max_age=60 * 60 * 24 * 365, samesite="Lax")
+    if getattr(g, "persist_project", False):
+        response.set_cookie("workbench_project", g.project_key, max_age=60 * 60 * 24 * 365, samesite="Lax")
     return response
 
 
@@ -53,6 +70,7 @@ def inject_template_helpers():
 
     def shell_url(endpoint: str, **values) -> str:
         values["lang"] = g.lang
+        values["project"] = g.project_key
         return url_for(endpoint, **values)
 
     def toggle_lang_url(target_lang: str) -> str:
@@ -63,17 +81,35 @@ def inject_template_helpers():
         values["lang"] = normalize_lang(target_lang)
         return url_for(request.endpoint or "index", **values)
 
+    def toggle_project_url(target_project: str) -> str:
+        values = dict(request.view_args or {})
+        for key, value in request.args.items():
+            if key != "project":
+                values[key] = value
+        values["project"] = target_project if target_project in PROJECTS else DEFAULT_PROJECT_KEY
+        return url_for(request.endpoint or "index", **values)
+
     return {
         "lang": g.lang,
         "html_lang": "zh-CN" if g.lang == "zh" else "en",
+        "project_key": g.project_key,
+        "project_options": [
+            {
+                "key": key,
+                "title_key": value["title_key"],
+                "desc_key": value["desc_key"],
+            }
+            for key, value in PROJECTS.items()
+        ],
         "t": t,
         "shell_url": shell_url,
         "toggle_lang_url": toggle_lang_url,
+        "toggle_project_url": toggle_project_url,
     }
 
 
 def _load_demo_run():
-    return run_project(PROJECT_ROOT)
+    return run_project(PROJECTS[g.project_key]["root"])
 
 
 def _homepage_payload(run):

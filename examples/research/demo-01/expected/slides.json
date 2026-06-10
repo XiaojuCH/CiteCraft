@@ -1,0 +1,310 @@
+{
+  "deliverable_id": "slides-demo-01",
+  "deliverable_type": "slides",
+  "version": "0.1",
+  "project_id": "research-demo-01",
+  "title": "Journal Club Slide Plan",
+  "deck_goal": "Prepare a five-slide executive presentation showing why cited briefs, comparison matrices, and slides are the fastest trustworthy path from market inputs to strategy output.",
+  "source_ids": [
+    "src_pdf_01",
+    "src_url_01",
+    "src_folder_01"
+  ],
+  "outline": [
+    {
+      "node_id": "slides.outline.01",
+      "title": "Framing",
+      "purpose": "Set up the journal club objective."
+    },
+    {
+      "node_id": "slides.outline.02",
+      "title": "Why traceability matters",
+      "purpose": "Show why cited deliverables build trust."
+    },
+    {
+      "node_id": "slides.outline.03",
+      "title": "What the sources say",
+      "purpose": "Summarize cross-source findings."
+    },
+    {
+      "node_id": "slides.outline.04",
+      "title": "Recommended demo shape",
+      "purpose": "Translate findings into a visible product path."
+    },
+    {
+      "node_id": "slides.outline.05",
+      "title": "Open questions",
+      "purpose": "Leave the audience with next steps."
+    }
+  ],
+  "slides": [
+    {
+      "node_id": "slides.slide.01",
+      "slide_number": 1,
+      "title": "Journal Club Framing",
+      "bullets": [
+        {
+          "node_id": "slides.slide.01.bullet.01",
+          "kind": "context",
+          "text": "Prepare a five-slide executive presentation showing why cited briefs, comparison matrices, and slides are the fastest trustworthy path from market inputs to strategy output.",
+          "trace_refs": []
+        },
+        {
+          "node_id": "slides.slide.01.bullet.02",
+          "kind": "claim",
+          "text": "This demo should show that research and consulting teams can turn scattered market inputs into client-ready outputs without sacrificing traceability.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_summary_01",
+              "source_id": "src_folder_01",
+              "chunk_id": "src_folder_01-chunk-002",
+              "relation": "supports",
+              "locator": {
+                "label": "framing.md",
+                "page": null,
+                "section": "Framing",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\folder\\notes\\framing.md",
+                "url": null
+              },
+              "snippet": "This demo should show that research and consulting teams can turn scattered market inputs into client-ready outputs without sacrificing traceability.",
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "speaker_notes": [
+        {
+          "node_id": "slides.slide.01.note.01",
+          "text": "Open by anchoring on the audience and the promised output shape.",
+          "trace_refs": []
+        }
+      ],
+      "render_hints": {
+        "layout": "title-plus-bullets"
+      }
+    },
+    {
+      "node_id": "slides.slide.02",
+      "slide_number": 2,
+      "title": "Why Traceability Matters",
+      "bullets": [
+        {
+          "node_id": "slides.slide.02.bullet.01",
+          "kind": "claim",
+          "text": "Finding 2: Briefs, comparison matrices, and slides are the most reusable first outputs.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_finding_01",
+              "source_id": "src_pdf_01",
+              "chunk_id": "src_pdf_01-chunk-005",
+              "relation": "supports",
+              "locator": {
+                "label": "report-01.pdf p.1",
+                "page": 1,
+                "section": null,
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\pdf\\report-01.pdf",
+                "url": null
+              },
+              "snippet": "Finding 2: Briefs, comparison matrices, and slides are the most reusable first outputs.",
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "node_id": "slides.slide.02.bullet.02",
+          "kind": "claim",
+          "text": "Finding 1: Traceable claims reduce review cycles in client-facing strategy work.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_finding_02",
+              "source_id": "src_pdf_01",
+              "chunk_id": "src_pdf_01-chunk-004",
+              "relation": "supports",
+              "locator": {
+                "label": "report-01.pdf p.1",
+                "page": 1,
+                "section": null,
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\pdf\\report-01.pdf",
+                "url": null
+              },
+              "snippet": "Finding 1: Traceable claims reduce review cycles in client-facing strategy work.",
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "speaker_notes": [
+        {
+          "node_id": "slides.slide.02.note.01",
+          "text": "Explain that visible trace links reduce the leap of faith in AI-generated outputs.",
+          "trace_refs": []
+        }
+      ],
+      "render_hints": {
+        "layout": "two-point"
+      }
+    },
+    {
+      "node_id": "slides.slide.03",
+      "slide_number": 3,
+      "title": "Cross-Source Takeaways",
+      "bullets": [
+        {
+          "node_id": "slides.slide.03.bullet.01",
+          "kind": "claim",
+          "text": "All three sources treat traceability as the trust lever that turns raw material into reusable outputs.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_matrix_synth_01",
+              "source_id": "src_url_01",
+              "chunk_id": "src_url_01-chunk-006",
+              "relation": "supports",
+              "locator": {
+                "label": "Practical guidance",
+                "page": null,
+                "section": "Practical guidance",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+                "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+              },
+              "snippet": "Show the jump from a deliverable claim back to a source chunk, even when the locator is only a section, file path, or page label in P0.",
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "node_id": "slides.slide.03.bullet.02",
+          "kind": "claim",
+          "text": "Research and consulting teams adopt AI tooling faster when the first output already looks like something a manager can review and reuse.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_finding_03",
+              "source_id": "src_url_01",
+              "chunk_id": "src_url_01-chunk-002",
+              "relation": "supports",
+              "locator": {
+                "label": "Consulting Playbook: Reviewable AI Outputs",
+                "page": null,
+                "section": "Consulting Playbook: Reviewable AI Outputs",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+                "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+              },
+              "snippet": "Research and consulting teams adopt AI tooling faster when the first output already looks like something a manager can review and reuse.",
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "speaker_notes": [
+        {
+          "node_id": "slides.slide.03.note.01",
+          "text": "Use the matrix view as the bridge between reading and presenting.",
+          "trace_refs": []
+        }
+      ],
+      "render_hints": {
+        "layout": "takeaways"
+      }
+    },
+    {
+      "node_id": "slides.slide.04",
+      "slide_number": 4,
+      "title": "Recommended Demo Shape",
+      "bullets": [
+        {
+          "node_id": "slides.slide.04.bullet.01",
+          "kind": "recommendation",
+          "text": "Keep the pipeline deterministic in P0: ingest, chunk, extract evidence, generate, bind, render.",
+          "trace_refs": []
+        },
+        {
+          "node_id": "slides.slide.04.bullet.02",
+          "kind": "claim",
+          "text": "Perfect export fidelity can wait until the content and trace quality already survive stakeholder review.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_limitation_01",
+              "source_id": "src_url_01",
+              "chunk_id": "src_url_01-chunk-009",
+              "relation": "supports",
+              "locator": {
+                "label": "Risks",
+                "page": null,
+                "section": "Risks",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\fixtures\\url-cache\\url-01.md",
+                "url": "https://example.com/consulting-playbook-reviewable-ai-outputs"
+              },
+              "snippet": "Perfect export fidelity can wait until the content and trace quality already survive stakeholder review.",
+              "metadata": {}
+            }
+          ]
+        }
+      ],
+      "speaker_notes": [
+        {
+          "node_id": "slides.slide.04.note.01",
+          "text": "Stress that content quality and trace clarity matter more than export polish in the first demo.",
+          "trace_refs": []
+        }
+      ],
+      "render_hints": {
+        "layout": "recommendation"
+      }
+    },
+    {
+      "node_id": "slides.slide.05",
+      "slide_number": 5,
+      "title": "Open Questions",
+      "bullets": [
+        {
+          "node_id": "slides.slide.05.bullet.01",
+          "kind": "question",
+          "text": "How should we expand templates for market mapping, diligence, and vendor comparison without making the product feel generic?",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_question_01",
+              "source_id": "src_folder_01",
+              "chunk_id": "src_folder_01-chunk-008",
+              "relation": "supports",
+              "locator": {
+                "label": "questions.md",
+                "page": null,
+                "section": "Open Questions",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\research\\demo-01\\inputs\\folder\\notes\\questions.md",
+                "url": null
+              },
+              "snippet": "How should we expand templates for market mapping, diligence, and vendor comparison without making the product feel generic?",
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "node_id": "slides.slide.05.bullet.02",
+          "kind": "question",
+          "text": "What is the minimum template system needed before opening plugin and skill extension points?",
+          "trace_refs": []
+        }
+      ],
+      "speaker_notes": [
+        {
+          "node_id": "slides.slide.05.note.01",
+          "text": "End by inviting discussion on expansion beyond academia without weakening the initial wedge.",
+          "trace_refs": []
+        }
+      ],
+      "render_hints": {
+        "layout": "closing"
+      }
+    }
+  ],
+  "render_hints": {
+    "tone": "professional",
+    "citation_mode": "inline_badge",
+    "audience_style": "academia",
+    "density": "medium",
+    "extras": {
+      "theme": "clean",
+      "aspect_ratio": "16:9",
+      "show_notes": "true"
+    }
+  }
+}
