@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}Sources{% endblock %}
+{% block content %}
+<section class="detail-header">
+  <a class="back-link" href="{{ url_for('index') }}">Back to demo</a>
+  <p class="eyebrow">source inventory</p>
+  <h1>Source Inputs</h1>
+  <p class="lede">The golden-path demo starts from one PDF, one URL, and one notes folder.</p>
+</section>
+
+<section class="deliverables">
+  {% for document in run.documents %}
+  <a class="deliverable-card" href="{{ url_for('source_view', source_id=document.source_id) }}">
+    <div class="kicker">{{ document.source_type }}</div>
+    <h3>{{ document.label }}</h3>
+    <p>{{ document.chunks|length }} chunks</p>
+  </a>
+  {% endfor %}
+</section>
+{% endblock %}
+

@@ -70,7 +70,8 @@ small {
 
 .grid,
 .deliverables,
-.detail-grid {
+.detail-grid,
+.chunk-list {
   display: grid;
   gap: 18px;
 }
@@ -82,6 +83,10 @@ small {
 
 .deliverables {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-bottom: 40px;
+}
+
+.chunk-list {
   margin-bottom: 40px;
 }
 
@@ -114,6 +119,18 @@ small {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.75rem;
+}
+
+.chunk-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.chunk-locator {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .trace-panel ul,

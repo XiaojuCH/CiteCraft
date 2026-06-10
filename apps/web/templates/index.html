@@ -17,7 +17,7 @@
     <h2>Inputs</h2>
     <ul>
       {% for document in run.documents %}
-      <li>{{ document.label }} <span class="pill">{{ document.source_type }}</span></li>
+      <li><a href="{{ url_for('source_view', source_id=document.source_id) }}">{{ document.label }}</a> <span class="pill">{{ document.source_type }}</span></li>
       {% endfor %}
     </ul>
   </article>
@@ -27,7 +27,7 @@
       <li>Open the brief and inspect traced findings.</li>
       <li>Open the matrix and inspect one factual cell.</li>
       <li>Open the slides preview and inspect one bullet trace.</li>
-      <li>Use the trace list to jump back to source locators.</li>
+      <li>Use the trace list to jump back to source chunks.</li>
     </ol>
   </article>
 </section>
@@ -42,4 +42,3 @@
   {% endfor %}
 </section>
 {% endblock %}
-

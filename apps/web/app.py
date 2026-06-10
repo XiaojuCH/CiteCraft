@@ -34,6 +34,25 @@ def index():
     return render_template("index.html", run=run)
 
 
+@APP.route("/sources")
+def sources_index():
+    run = _load_demo_run()
+    return render_template("sources.html", run=run)
+
+
+@APP.route("/sources/<source_id>")
+def source_view(source_id: str):
+    run = _load_demo_run()
+    document = next((item for item in run.documents if item.source_id == source_id), None)
+    if document is None:
+        abort(404)
+    return render_template(
+        "source.html",
+        run=run,
+        document=document,
+    )
+
+
 @APP.route("/deliverables/<deliverable_key>")
 def deliverable_view(deliverable_key: str):
     run = _load_demo_run()

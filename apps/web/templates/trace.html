@@ -18,6 +18,7 @@
       <li><strong>Relation:</strong> {{ trace.relation }}</li>
       <li><strong>Locator:</strong> {{ trace.locator.label }}</li>
     </ul>
+    <p><a class="back-link" href="{{ url_for('source_view', source_id=trace.source_id) }}#{{ trace.chunk_id }}">Open source chunk in context</a></p>
     <h3>Snippet</h3>
     <p>{{ trace.snippet }}</p>
   </article>

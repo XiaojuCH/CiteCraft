@@ -15,6 +15,6 @@ def _load_app_module():
 def test_demo_routes_return_success():
     module = _load_app_module()
     client = module.APP.test_client()
-    for path in ["/", "/deliverables/brief", "/deliverables/literature_matrix", "/deliverables/slides", "/traces/trc_brief_summary_01"]:
+    for path in ["/", "/sources", "/sources/src_pdf_01", "/deliverables/brief", "/deliverables/literature_matrix", "/deliverables/slides", "/traces/trc_brief_summary_01"]:
         response = client.get(path)
         assert response.status_code == 200

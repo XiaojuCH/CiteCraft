@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}{{ document.label }}{% endblock %}
+{% block content %}
+<section class="detail-header">
+  <a class="back-link" href="{{ url_for('sources_index') }}">Back to sources</a>
+  <p class="eyebrow">{{ document.source_type }}</p>
+  <h1>{{ document.label }}</h1>
+  <p class="lede">Review the normalized chunks that feed the deliverables and traces.</p>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <h2>Document</h2>
+    <ul class="meta-list">
+      <li><strong>Source ID:</strong> {{ document.source_id }}</li>
+      <li><strong>Type:</strong> {{ document.source_type }}</li>
+      <li><strong>Chunk count:</strong> {{ document.chunks|length }}</li>
+      <li><strong>Root locator:</strong> {{ document.locator.label }}</li>
+    </ul>
+  </article>
+  <article class="card">
+    <h2>Why it matters</h2>
+    <p>Every trace in the deliverable views resolves back to one of the chunks below.</p>
+  </article>
+</section>
+
+<section class="chunk-list">
+  {% for chunk in document.chunks %}
+  <article class="card" id="{{ chunk.chunk_id }}">
+    <div class="chunk-header">
+      <div>
+        <div class="kicker">{{ chunk.chunk_id }}</div>
+        <h3>{{ chunk.section or chunk.locator.label }}</h3>
+      </div>
+      <div class="chunk-locator">{{ chunk.locator.label }}</div>
+    </div>
+    <pre class="chunk-text">{{ chunk.text }}</pre>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}
