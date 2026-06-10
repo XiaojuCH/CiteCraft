@@ -1,0 +1,9 @@
+template_id: literature_matrix
+version: 0.1
+kind: deliverable
+structured_contract: literature_matrix
+render_targets:
+  - markdown
+  - html
+notes: P0 literature matrix template manifest.
+

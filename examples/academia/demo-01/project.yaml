@@ -1,0 +1,35 @@
+project_id: demo-01
+title: "Traceable journal club prep for evidence-backed AI deliverables"
+audience: "Lab presenter preparing a journal club deck"
+positioning: "Academia-first, not academia-only."
+requested_deliverables:
+  - brief
+  - literature_matrix
+  - slides
+demo_order:
+  - brief
+  - literature_matrix
+  - slides
+comparison_dimensions:
+  - Core claim
+  - Evidence or method
+  - Deliverable relevance
+  - Limitations
+brief_focus: "Summarize what makes evidence-backed AI deliverables useful for journal clubs and where the current gaps remain."
+slide_goal: "Prepare a five-slide journal club presentation that shows why traceable briefs, matrices, and slides are the right first outputs."
+sources:
+  - source_id: src_pdf_01
+    type: pdf
+    label: "Structured Evidence Synthesis for Journal Clubs"
+    path: inputs/pdf/paper-01.pdf
+  - source_id: src_url_01
+    type: url
+    label: "Lab Playbook: Evidence-Linked Research Deliverables"
+    url: https://example.com/lab-playbook-evidence-linked-research-deliverables
+    cache_path: fixtures/url-cache/url-01.md
+  - source_id: src_folder_01
+    type: folder
+    label: "Presenter notes"
+    path: inputs/folder/notes
+metadata:
+  brand_state: provisional

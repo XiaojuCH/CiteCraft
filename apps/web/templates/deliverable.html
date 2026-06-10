@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}{{ deliverable.title }}{% endblock %}
+{% block content %}
+<section class="detail-header">
+  <a class="back-link" href="{{ url_for('index') }}">Back to demo</a>
+  <p class="eyebrow">{{ deliverable_key.replace('_', ' ') }}</p>
+  <h1>{{ deliverable.title }}</h1>
+</section>
+
+<section class="detail-grid">
+  <article class="content card prose">
+    {{ content_html|safe }}
+  </article>
+  <aside class="card trace-panel">
+    <h2>Trace Panel</h2>
+    <p>Every entry below points back to a source chunk.</p>
+    <ul>
+      {% for trace in traces %}
+      <li>
+        <strong><a href="{{ url_for('trace_view', trace_id=trace.trace_id) }}">{{ trace.locator.label }}</a></strong>
+        <div>{{ trace.snippet }}</div>
+        <small>{{ trace.source_id }} | {{ trace.chunk_id }}</small>
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+</section>
+{% endblock %}

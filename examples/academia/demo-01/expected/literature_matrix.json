@@ -1,0 +1,395 @@
+{
+  "deliverable_id": "matrix-demo-01",
+  "deliverable_type": "literature_matrix",
+  "version": "0.1",
+  "project_id": "demo-01",
+  "title": "Literature Matrix",
+  "source_ids": [
+    "src_pdf_01",
+    "src_url_01",
+    "src_folder_01"
+  ],
+  "columns": [
+    {
+      "column_id": "matrix.col.01",
+      "label": "Core claim"
+    },
+    {
+      "column_id": "matrix.col.02",
+      "label": "Evidence or method"
+    },
+    {
+      "column_id": "matrix.col.03",
+      "label": "Deliverable relevance"
+    },
+    {
+      "column_id": "matrix.col.04",
+      "label": "Limitations"
+    }
+  ],
+  "rows": [
+    {
+      "row_id": "matrix.row.01",
+      "source_id": "src_pdf_01",
+      "label": "Structured Evidence Synthesis for Journal Clubs"
+    },
+    {
+      "row_id": "matrix.row.02",
+      "source_id": "src_url_01",
+      "label": "Lab Playbook: Evidence-Linked Research Deliverables"
+    },
+    {
+      "row_id": "matrix.row.03",
+      "source_id": "src_folder_01",
+      "label": "Presenter notes"
+    }
+  ],
+  "cells": [
+    {
+      "node_id": "matrix.cell.row01.col01",
+      "row_id": "matrix.row.01",
+      "column_id": "matrix.col.01",
+      "value": "Finding 1: Chunk-level evidence links make every key claim reviewable.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_01_matrix_col_01",
+          "source_id": "src_pdf_01",
+          "chunk_id": "src_pdf_01-chunk-004",
+          "relation": "supports",
+          "locator": {
+            "label": "paper-01.pdf p.1",
+            "page": 1,
+            "section": null,
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\pdf\\paper-01.pdf",
+            "url": null
+          },
+          "snippet": "Finding 1: Chunk-level evidence links make every key claim reviewable.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row01.col02",
+      "row_id": "matrix.row.01",
+      "column_id": "matrix.col.02",
+      "value": "Method: The workflow normalizes PDFs, URLs, and notes into source chunks.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_01_matrix_col_02",
+          "source_id": "src_pdf_01",
+          "chunk_id": "src_pdf_01-chunk-003",
+          "relation": "supports",
+          "locator": {
+            "label": "paper-01.pdf p.1",
+            "page": 1,
+            "section": null,
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\pdf\\paper-01.pdf",
+            "url": null
+          },
+          "snippet": "Method: The workflow normalizes PDFs, URLs, and notes into source chunks.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row01.col03",
+      "row_id": "matrix.row.01",
+      "column_id": "matrix.col.03",
+      "value": "Finding 2: Deliverable-first outputs such as briefs and slides improve reuse.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_01_matrix_col_03",
+          "source_id": "src_pdf_01",
+          "chunk_id": "src_pdf_01-chunk-005",
+          "relation": "supports",
+          "locator": {
+            "label": "paper-01.pdf p.1",
+            "page": 1,
+            "section": null,
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\pdf\\paper-01.pdf",
+            "url": null
+          },
+          "snippet": "Finding 2: Deliverable-first outputs such as briefs and slides improve reuse.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row01.col04",
+      "row_id": "matrix.row.01",
+      "column_id": "matrix.col.04",
+      "value": "Limitation: Content still needs human judgment for framing and domain nuance.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_01_matrix_col_04",
+          "source_id": "src_pdf_01",
+          "chunk_id": "src_pdf_01-chunk-006",
+          "relation": "supports",
+          "locator": {
+            "label": "paper-01.pdf p.1",
+            "page": 1,
+            "section": null,
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\pdf\\paper-01.pdf",
+            "url": null
+          },
+          "snippet": "Limitation: Content still needs human judgment for framing and domain nuance.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row02.col01",
+      "row_id": "matrix.row.02",
+      "column_id": "matrix.col.01",
+      "value": "Show a trace panel that jumps from a claim back to the exact source chunk, even if the locator is only a page, sectio...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_02_matrix_col_01",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-006",
+          "relation": "supports",
+          "locator": {
+            "label": "Practical guidance",
+            "page": null,
+            "section": "Practical guidance",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/lab-playbook-evidence-linked-research-deliverables"
+          },
+          "snippet": "Show a trace panel that jumps from a claim back to the exact source chunk, even if the locator is only a page, section, or file path in P0.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row02.col02",
+      "row_id": "matrix.row.02",
+      "column_id": "matrix.col.02",
+      "value": "Prefer deterministic pipelines before adding agent orchestration, because repeatability matters more than novelty in...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_02_matrix_col_02",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-005",
+          "relation": "supports",
+          "locator": {
+            "label": "Practical guidance",
+            "page": null,
+            "section": "Practical guidance",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/lab-playbook-evidence-linked-research-deliverables"
+          },
+          "snippet": "Prefer deterministic pipelines before adding agent orchestration, because repeatability matters more than novelty in the first demo.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row02.col03",
+      "row_id": "matrix.row.02",
+      "column_id": "matrix.col.03",
+      "value": "Teams adopt research tooling faster when the first demo produces a cited brief, a comparison matrix, and a slide deck...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_02_matrix_col_03",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-002",
+          "relation": "supports",
+          "locator": {
+            "label": "Lab Playbook: Evidence-Linked Research Deliverables",
+            "page": null,
+            "section": "Lab Playbook: Evidence-Linked Research Deliverables",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/lab-playbook-evidence-linked-research-deliverables"
+          },
+          "snippet": "Teams adopt research tooling faster when the first demo produces a cited brief, a comparison matrix, and a slide deck that looks ready for a meeting.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row02.col04",
+      "row_id": "matrix.row.02",
+      "column_id": "matrix.col.04",
+      "value": "PPTX fidelity can wait until slide content, speaker notes, and evidence links already feel strong.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_02_matrix_col_04",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-009",
+          "relation": "supports",
+          "locator": {
+            "label": "Risks",
+            "page": null,
+            "section": "Risks",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/lab-playbook-evidence-linked-research-deliverables"
+          },
+          "snippet": "PPTX fidelity can wait until slide content, speaker notes, and evidence links already feel strong.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row03.col01",
+      "row_id": "matrix.row.03",
+      "column_id": "matrix.col.01",
+      "value": "Lead with visible output quality, then show the trace panel so the audience can jump from a claim back to the source...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_03_matrix_col_01",
+          "source_id": "src_folder_01",
+          "chunk_id": "src_folder_01-chunk-005",
+          "relation": "supports",
+          "locator": {
+            "label": "framing.md",
+            "page": null,
+            "section": "Presenter emphasis",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\folder\\notes\\framing.md",
+            "url": null
+          },
+          "snippet": "Lead with visible output quality, then show the trace panel so the audience can jump from a claim back to the source chunk.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row03.col02",
+      "row_id": "matrix.row.03",
+      "column_id": "matrix.col.02",
+      "value": "The audience is a research lab that wants a workflow from scattered sources to a brief, matrix, and presentation-read...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_03_matrix_col_02",
+          "source_id": "src_folder_01",
+          "chunk_id": "src_folder_01-chunk-003",
+          "relation": "supports",
+          "locator": {
+            "label": "framing.md",
+            "page": null,
+            "section": "Framing",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\folder\\notes\\framing.md",
+            "url": null
+          },
+          "snippet": "The audience is a research lab that wants a workflow from scattered sources to a brief, matrix, and presentation-ready slide plan.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row03.col03",
+      "row_id": "matrix.row.03",
+      "column_id": "matrix.col.03",
+      "value": "The audience is a research lab that wants a workflow from scattered sources to a brief, matrix, and presentation-read...",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_03_matrix_col_03",
+          "source_id": "src_folder_01",
+          "chunk_id": "src_folder_01-chunk-003",
+          "relation": "supports",
+          "locator": {
+            "label": "framing.md",
+            "page": null,
+            "section": "Framing",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\folder\\notes\\framing.md",
+            "url": null
+          },
+          "snippet": "The audience is a research lab that wants a workflow from scattered sources to a brief, matrix, and presentation-ready slide plan.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "node_id": "matrix.cell.row03.col04",
+      "row_id": "matrix.row.03",
+      "column_id": "matrix.col.04",
+      "value": "Show why PPTX can wait until content and evidence quality feel strong.",
+      "is_factual": true,
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_row_03_matrix_col_04",
+          "source_id": "src_folder_01",
+          "chunk_id": "src_folder_01-chunk-011",
+          "relation": "supports",
+          "locator": {
+            "label": "questions.md",
+            "page": null,
+            "section": "Demo prompts",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\folder\\notes\\questions.md",
+            "url": null
+          },
+          "snippet": "Show why PPTX can wait until content and evidence quality feel strong.",
+          "metadata": {}
+        }
+      ]
+    }
+  ],
+  "synthesis": [
+    {
+      "node_id": "matrix.synthesis.01",
+      "text": "All three sources treat traceability as the trust lever that turns raw material into reusable outputs.",
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_synth_01",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-006",
+          "relation": "supports",
+          "locator": {
+            "label": "Practical guidance",
+            "page": null,
+            "section": "Practical guidance",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/lab-playbook-evidence-linked-research-deliverables"
+          },
+          "snippet": "Show a trace panel that jumps from a claim back to the exact source chunk, even if the locator is only a page, section, or file path in P0.",
+          "metadata": {}
+        }
+      ],
+      "kind": "synthesis",
+      "title": "Common thread"
+    },
+    {
+      "node_id": "matrix.synthesis.02",
+      "text": "Slides stay in P0 because visible, content-first deliverables are easier to demo than perfect export fidelity.",
+      "trace_refs": [
+        {
+          "trace_id": "trc_matrix_synth_02",
+          "source_id": "src_url_01",
+          "chunk_id": "src_url_01-chunk-009",
+          "relation": "supports",
+          "locator": {
+            "label": "Risks",
+            "page": null,
+            "section": "Risks",
+            "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\fixtures\\url-cache\\url-01.md",
+            "url": "https://example.com/lab-playbook-evidence-linked-research-deliverables"
+          },
+          "snippet": "PPTX fidelity can wait until slide content, speaker notes, and evidence links already feel strong.",
+          "metadata": {}
+        }
+      ],
+      "kind": "synthesis",
+      "title": "Delivery bias"
+    }
+  ],
+  "render_hints": {
+    "tone": "professional",
+    "citation_mode": "inline_badge",
+    "audience_style": "academia",
+    "density": "medium",
+    "extras": {
+      "compactness": "comfortable",
+      "show_source_column": "true"
+    }
+  }
+}

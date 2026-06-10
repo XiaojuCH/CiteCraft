@@ -1,0 +1,9 @@
+template_id: brief
+version: 0.1
+kind: deliverable
+structured_contract: brief
+render_targets:
+  - markdown
+  - html
+notes: P0 cited brief template manifest.
+

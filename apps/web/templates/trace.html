@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}Trace {{ trace.trace_id }}{% endblock %}
+{% block content %}
+<section class="detail-header">
+  <a class="back-link" href="{{ url_for('index') }}">Back to demo</a>
+  <p class="eyebrow">trace inspector</p>
+  <h1>{{ trace.locator.label }}</h1>
+  <p class="lede">This is the source chunk behind a deliverable claim.</p>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Trace metadata</h2>
+    <ul class="meta-list">
+      <li><strong>Trace ID:</strong> {{ trace.trace_id }}</li>
+      <li><strong>Source ID:</strong> {{ trace.source_id }}</li>
+      <li><strong>Chunk ID:</strong> {{ trace.chunk_id }}</li>
+      <li><strong>Relation:</strong> {{ trace.relation }}</li>
+      <li><strong>Locator:</strong> {{ trace.locator.label }}</li>
+    </ul>
+    <h3>Snippet</h3>
+    <p>{{ trace.snippet }}</p>
+  </article>
+  <article class="card prose">
+    <h2>Source chunk</h2>
+    {% if chunk.section %}
+    <p class="eyebrow">{{ chunk.section }}</p>
+    {% endif %}
+    <pre class="chunk-text">{{ chunk.text }}</pre>
+  </article>
+</section>
+{% endblock %}

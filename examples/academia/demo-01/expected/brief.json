@@ -1,0 +1,233 @@
+{
+  "deliverable_id": "brief-demo-01",
+  "deliverable_type": "brief",
+  "version": "0.1",
+  "project_id": "demo-01",
+  "title": "Cited Brief",
+  "objective": "Summarize what makes evidence-backed AI deliverables useful for journal clubs and where the current gaps remain.",
+  "source_ids": [
+    "src_pdf_01",
+    "src_url_01",
+    "src_folder_01"
+  ],
+  "sections": [
+    {
+      "node_id": "brief.section.summary",
+      "title": "Summary",
+      "items": [
+        {
+          "node_id": "brief.summary.01",
+          "text": "Teams adopt research tooling faster when the first demo produces a cited brief, a comparison matrix, and a slide deck that looks ready for a meeting.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_summary_01",
+              "source_id": "src_url_01",
+              "chunk_id": "src_url_01-chunk-002",
+              "relation": "supports",
+              "locator": {
+                "label": "Lab Playbook: Evidence-Linked Research Deliverables",
+                "page": null,
+                "section": "Lab Playbook: Evidence-Linked Research Deliverables",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\fixtures\\url-cache\\url-01.md",
+                "url": "https://example.com/lab-playbook-evidence-linked-research-deliverables"
+              },
+              "snippet": "Teams adopt research tooling faster when the first demo produces a cited brief, a comparison matrix, and a slide deck that looks ready for a meeting.",
+              "metadata": {}
+            }
+          ],
+          "kind": "summary",
+          "title": ""
+        }
+      ]
+    },
+    {
+      "node_id": "brief.section.key_findings",
+      "title": "Key Findings",
+      "items": [
+        {
+          "node_id": "brief.finding.01",
+          "text": "Finding 2: Deliverable-first outputs such as briefs and slides improve reuse.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_finding_01",
+              "source_id": "src_pdf_01",
+              "chunk_id": "src_pdf_01-chunk-005",
+              "relation": "supports",
+              "locator": {
+                "label": "paper-01.pdf p.1",
+                "page": 1,
+                "section": null,
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\pdf\\paper-01.pdf",
+                "url": null
+              },
+              "snippet": "Finding 2: Deliverable-first outputs such as briefs and slides improve reuse.",
+              "metadata": {}
+            }
+          ],
+          "kind": "finding",
+          "title": "Key finding 1"
+        },
+        {
+          "node_id": "brief.finding.02",
+          "text": "Teams adopt research tooling faster when the first demo produces a cited brief, a comparison matrix, and a slide deck that looks ready for a meeting.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_finding_02",
+              "source_id": "src_url_01",
+              "chunk_id": "src_url_01-chunk-002",
+              "relation": "supports",
+              "locator": {
+                "label": "Lab Playbook: Evidence-Linked Research Deliverables",
+                "page": null,
+                "section": "Lab Playbook: Evidence-Linked Research Deliverables",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\fixtures\\url-cache\\url-01.md",
+                "url": "https://example.com/lab-playbook-evidence-linked-research-deliverables"
+              },
+              "snippet": "Teams adopt research tooling faster when the first demo produces a cited brief, a comparison matrix, and a slide deck that looks ready for a meeting.",
+              "metadata": {}
+            }
+          ],
+          "kind": "finding",
+          "title": "Key finding 2"
+        },
+        {
+          "node_id": "brief.finding.03",
+          "text": "Finding 1: Chunk-level evidence links make every key claim reviewable.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_finding_03",
+              "source_id": "src_pdf_01",
+              "chunk_id": "src_pdf_01-chunk-004",
+              "relation": "supports",
+              "locator": {
+                "label": "paper-01.pdf p.1",
+                "page": 1,
+                "section": null,
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\pdf\\paper-01.pdf",
+                "url": null
+              },
+              "snippet": "Finding 1: Chunk-level evidence links make every key claim reviewable.",
+              "metadata": {}
+            }
+          ],
+          "kind": "finding",
+          "title": "Key finding 3"
+        }
+      ]
+    },
+    {
+      "node_id": "brief.section.limitations",
+      "title": "Limitations",
+      "items": [
+        {
+          "node_id": "brief.limitation.01",
+          "text": "PPTX fidelity can wait until slide content, speaker notes, and evidence links already feel strong.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_limitation_01",
+              "source_id": "src_url_01",
+              "chunk_id": "src_url_01-chunk-009",
+              "relation": "supports",
+              "locator": {
+                "label": "Risks",
+                "page": null,
+                "section": "Risks",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\fixtures\\url-cache\\url-01.md",
+                "url": "https://example.com/lab-playbook-evidence-linked-research-deliverables"
+              },
+              "snippet": "PPTX fidelity can wait until slide content, speaker notes, and evidence links already feel strong.",
+              "metadata": {}
+            }
+          ],
+          "kind": "limitation",
+          "title": ""
+        },
+        {
+          "node_id": "brief.limitation.02",
+          "text": "Overly broad automation reduces trust when users cannot explain where a statement came from.",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_limitation_02",
+              "source_id": "src_url_01",
+              "chunk_id": "src_url_01-chunk-008",
+              "relation": "supports",
+              "locator": {
+                "label": "Risks",
+                "page": null,
+                "section": "Risks",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\fixtures\\url-cache\\url-01.md",
+                "url": "https://example.com/lab-playbook-evidence-linked-research-deliverables"
+              },
+              "snippet": "Overly broad automation reduces trust when users cannot explain where a statement came from.",
+              "metadata": {}
+            }
+          ],
+          "kind": "limitation",
+          "title": ""
+        }
+      ]
+    },
+    {
+      "node_id": "brief.section.open_questions",
+      "title": "Open Questions",
+      "items": [
+        {
+          "node_id": "brief.question.01",
+          "text": "How quickly can the product expand from academic demos into research, consulting, and policy without losing clarity?",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_question_01",
+              "source_id": "src_folder_01",
+              "chunk_id": "src_folder_01-chunk-008",
+              "relation": "supports",
+              "locator": {
+                "label": "questions.md",
+                "page": null,
+                "section": "Open Questions",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\folder\\notes\\questions.md",
+                "url": null
+              },
+              "snippet": "How quickly can the product expand from academic demos into research, consulting, and policy without losing clarity?",
+              "metadata": {}
+            }
+          ],
+          "kind": "question",
+          "title": ""
+        },
+        {
+          "node_id": "brief.question.02",
+          "text": "What is the minimum trace granularity needed before expert users feel confident reviewing generated deliverables?",
+          "trace_refs": [
+            {
+              "trace_id": "trc_brief_question_02",
+              "source_id": "src_folder_01",
+              "chunk_id": "src_folder_01-chunk-007",
+              "relation": "supports",
+              "locator": {
+                "label": "questions.md",
+                "page": null,
+                "section": "Open Questions",
+                "filepath": "D:\\Projects_\\My_10k_repo\\examples\\academia\\demo-01\\inputs\\folder\\notes\\questions.md",
+                "url": null
+              },
+              "snippet": "What is the minimum trace granularity needed before expert users feel confident reviewing generated deliverables?",
+              "metadata": {}
+            }
+          ],
+          "kind": "question",
+          "title": ""
+        }
+      ]
+    }
+  ],
+  "render_hints": {
+    "tone": "professional",
+    "citation_mode": "inline_badge",
+    "audience_style": "academia",
+    "density": "medium",
+    "extras": {
+      "show_trace_badges": "true",
+      "section_order": "summary,key_findings,limitations,open_questions"
+    }
+  }
+}

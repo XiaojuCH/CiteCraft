@@ -1,0 +1,8 @@
+template_id: slides
+version: 0.1
+kind: deliverable
+structured_contract: slides
+render_targets:
+  - markdown
+  - html
+notes: P0 content-level slides template manifest.

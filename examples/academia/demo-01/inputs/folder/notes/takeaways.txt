@@ -1,0 +1,6 @@
+Key takeaway: the first demo should make traceability visible in under one minute.
+
+Slides matter because they are easy to screenshot, easy to narrate, and naturally show a claim-to-source jump.
+
+The matrix should help a presenter compare what each source contributes without rereading every document.
+

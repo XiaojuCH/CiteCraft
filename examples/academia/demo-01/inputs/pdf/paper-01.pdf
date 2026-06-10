@@ -1,0 +1,48 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [3 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 629 >>
+stream
+BT
+/F1 12 Tf
+72 740 Td
+(Structured Evidence Synthesis for Journal Clubs) Tj
+0 -18 Td
+(Background: Journal clubs often end with fragmented notes and weak citations.) Tj
+0 -18 Td
+(Method: The workflow normalizes PDFs, URLs, and notes into source chunks.) Tj
+0 -18 Td
+(Finding 1: Chunk-level evidence links make every key claim reviewable.) Tj
+0 -18 Td
+(Finding 2: Deliverable-first outputs such as briefs and slides improve reuse.) Tj
+0 -18 Td
+(Limitation: Content still needs human judgment for framing and domain nuance.) Tj
+0 -18 Td
+(Conclusion: Slides and briefs are the highest-visibility outputs for first-time users.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000920 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+990
+%%EOF

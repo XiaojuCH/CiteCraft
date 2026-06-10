@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}CiteCraft Demo{% endblock %}
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">Academia-first, not academia-only.</p>
+  <h1>Turn messy sources into cited deliverables.</h1>
+  <p class="lede">Upload PDFs, URLs, and note folders. Get a cited brief, literature matrix, and slide deck you can actually use.</p>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <h2>Sample project</h2>
+    <p><strong>{{ run.project.title }}</strong></p>
+    <p>{{ run.project.slide_goal }}</p>
+  </article>
+  <article class="card">
+    <h2>Inputs</h2>
+    <ul>
+      {% for document in run.documents %}
+      <li>{{ document.label }} <span class="pill">{{ document.source_type }}</span></li>
+      {% endfor %}
+    </ul>
+  </article>
+  <article class="card">
+    <h2>1-minute flow</h2>
+    <ol>
+      <li>Open the brief and inspect traced findings.</li>
+      <li>Open the matrix and inspect one factual cell.</li>
+      <li>Open the slides preview and inspect one bullet trace.</li>
+      <li>Use the trace list to jump back to source locators.</li>
+    </ol>
+  </article>
+</section>
+
+<section class="deliverables">
+  {% for key in run.project.demo_order %}
+  <a class="deliverable-card" href="{{ url_for('deliverable_view', deliverable_key=key) }}">
+    <div class="kicker">{{ key.replace('_', ' ') }}</div>
+    <h3>{{ run.deliverables[key].title }}</h3>
+    <p>Open preview and trace panel</p>
+  </a>
+  {% endfor %}
+</section>
+{% endblock %}
+
