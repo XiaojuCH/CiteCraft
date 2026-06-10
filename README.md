@@ -54,6 +54,21 @@ D:\anaconda3\python.exe apps\web\app.py
 
 Then open `http://127.0.0.1:5000`.
 
+## Optional Model Provider
+
+The default demo is deterministic so the 1-minute path stays stable.
+To try a real model through an OpenAI-compatible endpoint:
+
+```powershell
+$env:WORKBENCH_PROVIDER="openai-compatible"
+$env:WORKBENCH_API_KEY="..."
+$env:WORKBENCH_MODEL="gpt-4.1-mini"
+$env:WORKBENCH_BASE_URL="https://api.openai.com/v1"
+D:\anaconda3\python.exe -m workbench.pipeline.run examples/academia/demo-01 --provider openai-compatible
+```
+
+If provider config is missing or a request fails, the demo safely falls back to deterministic seed text.
+
 ## Current Scope
 
 P0 includes:
