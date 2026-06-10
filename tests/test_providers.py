@@ -8,6 +8,7 @@ from workbench.sources.registry import load_documents
 from workbench.contracts.project import load_project_config
 from workbench.providers.base import GenerationProvider, ProviderConfig
 from workbench.providers.openai_compatible import OpenAICompatibleProvider
+from workbench.providers.prompt_recipes import build_messages, get_prompt_recipe
 from workbench.providers.registry import get_provider
 
 
@@ -83,3 +84,32 @@ def test_openai_compatible_provider_uses_model_response(monkeypatch):
 
     monkeypatch.setattr("urllib.request.urlopen", lambda request, timeout=0: FakeResponse())
     assert provider.compose("brief.summary", "Seed text", {"objective": "demo"}) == "Polished output"
+
+
+def test_prompt_recipes_are_task_specific():
+    brief_recipe = get_prompt_recipe("brief.finding")
+    slide_recipe = get_prompt_recipe("slides.bullet")
+    assert "key finding" in brief_recipe.system_goal.lower()
+    assert "slide bullet" in slide_recipe.system_goal.lower()
+
+
+def test_openai_payload_uses_task_specific_messages():
+    provider = OpenAICompatibleProvider(
+        ProviderConfig(
+            name="openai-compatible",
+            api_key="example-key",
+            model="example-model",
+            base_url="https://example.test/v1",
+        )
+    )
+    payload = provider.build_payload("slides.bullet", "Seed bullet", {"slide": "2", "kind": "claim"})
+    system_message = payload["messages"][0]["content"]
+    user_message = payload["messages"][1]["content"]
+    assert "presentation slide" in system_message.lower()
+    assert '"slide": "2"' in user_message
+
+
+def test_build_messages_include_seed_text_and_metadata():
+    messages = build_messages("literature_matrix.cell", "Seed cell", {"column": "Evidence or method"})
+    assert messages[1]["content"].count("Seed cell") == 1
+    assert '"column": "Evidence or method"' in messages[1]["content"]

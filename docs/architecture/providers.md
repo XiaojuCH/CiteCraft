@@ -10,6 +10,17 @@ It only rewrites one already-selected deliverable node at a time.
 - `deterministic`: default provider that returns seed text unchanged.
 - `openai-compatible`: optional chat-completions provider for OpenAI-compatible APIs.
 
+## Prompt Recipes
+
+Prompt strategy is task-specific by design.
+
+- `brief.summary`, `brief.finding`, `brief.limitation`, `brief.question`
+- `literature_matrix.cell`, `literature_matrix.synthesis`
+- `slides.bullet`, `slides.note`
+
+Each recipe keeps the provider narrow: evidence selection still happens in core,
+while the provider only rewrites one node for the right output shape.
+
 ## Configuration
 
 ```powershell

@@ -8,6 +8,7 @@ import urllib.request
 from typing import Dict
 
 from workbench.providers.base import GenerationProvider, ProviderConfig
+from workbench.providers.prompt_recipes import build_messages
 
 
 class OpenAICompatibleProvider(GenerationProvider):
@@ -40,32 +41,7 @@ class OpenAICompatibleProvider(GenerationProvider):
 
     def _call_model(self, task: str, seed_text: str, metadata: Dict[str, str]) -> str:
         url = self.config.base_url.rstrip("/") + "/chat/completions"
-        payload = {
-            "model": self.config.model,
-            "temperature": 0.2,
-            "messages": [
-                {
-                    "role": "system",
-                    "content": (
-                        "You rewrite evidence-backed deliverable nodes. "
-                        "Keep the meaning faithful to the seed evidence. "
-                        "Do not invent facts, sources, or citations. "
-                        "Return only the final node text."
-                    ),
-                },
-                {
-                    "role": "user",
-                    "content": json.dumps(
-                        {
-                            "task": task,
-                            "metadata": metadata,
-                            "seed_text": seed_text,
-                        },
-                        ensure_ascii=False,
-                    ),
-                },
-            ],
-        }
+        payload = self.build_payload(task=task, seed_text=seed_text, metadata=metadata)
         request = urllib.request.Request(
             url,
             data=json.dumps(payload).encode("utf-8"),
@@ -78,3 +54,11 @@ class OpenAICompatibleProvider(GenerationProvider):
         with urllib.request.urlopen(request, timeout=self.config.timeout_seconds) as response:
             data = json.loads(response.read().decode("utf-8"))
         return data["choices"][0]["message"]["content"]
+
+    def build_payload(self, task: str, seed_text: str, metadata: Dict[str, str]) -> Dict[str, object]:
+        """Expose payload construction for tests and future prompt iteration."""
+        return {
+            "model": self.config.model,
+            "temperature": 0.2,
+            "messages": build_messages(task=task, seed_text=seed_text, metadata=metadata),
+        }
