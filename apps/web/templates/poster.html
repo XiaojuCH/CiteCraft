@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="{{ html_lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ t("page_title") }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
+  </head>
+  <body class="poster-page">
+    <main class="poster-shell">
+      <section class="poster-hero">
+        <div class="poster-copy">
+          <p class="eyebrow">{{ t("poster_eyebrow") }}</p>
+          <h1>{{ t("hero_title") }}</h1>
+          <p class="poster-lede">{{ t("poster_lede") }}</p>
+          <div class="poster-tags">
+            <span class="poster-tag">{{ t("hero_badge_trace") }}</span>
+            <span class="poster-tag">{{ t("hero_badge_markdown") }}</span>
+            <span class="poster-tag">{{ t("poster_tag_results") }}</span>
+          </div>
+          <div class="poster-trackline">
+            <span class="poster-track-label">{{ t("poster_track_label") }}</span>
+            <strong>{{ t(poster.track_title_key) }}</strong>
+          </div>
+          <p class="poster-project-title">{{ poster.project_title }}</p>
+        </div>
+
+        <div class="poster-board">
+          <article class="poster-card poster-card-brief">
+            <div class="proof-topline">
+              <span class="kicker">cited brief</span>
+              <span class="trace-chip">{{ poster.brief_summary.trace_refs[0].locator.label }}</span>
+            </div>
+            <h2>{{ t("preview_brief_title") }}</h2>
+            <p class="poster-copy-strong">{{ poster.brief_summary.text }}</p>
+            <div class="proof-divider"></div>
+            <p class="proof-label">{{ t("preview_key_finding") }}</p>
+            <p class="proof-text">{{ poster.brief_finding.text }}</p>
+          </article>
+
+          <article class="poster-card poster-card-matrix">
+            <div class="proof-topline">
+              <span class="kicker">literature matrix</span>
+              <span class="trace-chip">{{ t("poster_matrix_label") }}</span>
+            </div>
+            <h2>{{ t("preview_matrix_title") }}</h2>
+            <div class="mini-table">
+              {% for column in poster.matrix_columns %}
+              <div class="mini-table-row">
+                <div class="mini-table-key">{{ column.label }}</div>
+                <div class="mini-table-value">{{ column.value }}</div>
+              </div>
+              {% endfor %}
+            </div>
+          </article>
+
+          <article class="poster-card poster-card-slides">
+            <div class="proof-topline">
+              <span class="kicker">slides</span>
+              <span class="trace-chip">HTML / Markdown</span>
+            </div>
+            <h2>{{ t("preview_slides_title") }}</h2>
+            <p class="slide-preview-title">{{ poster.slides_title }}</p>
+            <ul class="slide-preview-list">
+              {% for bullet in poster.slide_bullets %}
+              <li>{{ bullet.text }}</li>
+              {% endfor %}
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="poster-footer">
+        <div class="poster-metrics">
+          {% for metric in poster.metrics %}
+          <div class="metric-pill">
+            <strong>{{ metric.value }}</strong>
+            <span>{{ t(metric.label_key) }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="poster-proof">
+          <div class="poster-proof-line">{{ t("poster_footer_line_1") }}</div>
+          <div class="poster-proof-line">{{ t("poster_footer_line_2") }}</div>
+          <div class="poster-proof-line">{{ t("poster_footer_line_3") }}</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

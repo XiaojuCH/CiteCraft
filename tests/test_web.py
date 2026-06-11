@@ -15,7 +15,7 @@ def _load_app_module():
 def test_demo_routes_return_success():
     module = _load_app_module()
     client = module.APP.test_client()
-    for path in ["/", "/?project=research-demo-01", "/sources", "/sources/src_pdf_01", "/deliverables/brief", "/deliverables/literature_matrix", "/deliverables/slides", "/traces/trc_brief_summary_01"]:
+    for path in ["/", "/poster", "/poster?project=research-demo-01", "/?project=research-demo-01", "/sources", "/sources/src_pdf_01", "/deliverables/brief", "/deliverables/literature_matrix", "/deliverables/slides", "/traces/trc_brief_summary_01"]:
         response = client.get(path)
         assert response.status_code == 200
 
@@ -58,3 +58,13 @@ def test_homepage_can_switch_to_research_demo():
     html = response.get_data(as_text=True)
     assert "Strategy memo prep for AI due diligence deliverables" in html
     assert "project=research-demo-01" in html
+
+
+def test_poster_route_uses_project_and_language_state():
+    module = _load_app_module()
+    client = module.APP.test_client()
+    response = client.get("/poster?lang=zh&project=research-demo-01")
+    html = response.get_data(as_text=True)
+    assert "把杂乱资料变成带引用、可交付的成果。" in html
+    assert "Strategy memo prep for AI due diligence deliverables" in html
+    assert "proof-board" not in html

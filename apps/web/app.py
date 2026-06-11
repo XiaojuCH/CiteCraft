@@ -152,10 +152,34 @@ def _homepage_payload(run):
     }
 
 
+def _poster_payload(run):
+    homepage = _homepage_payload(run)
+    brief = run.deliverables["brief"]
+    matrix = run.deliverables["literature_matrix"]
+    slides = run.deliverables["slides"]
+    return {
+        "project_title": run.project.title,
+        "project_positioning": run.project.positioning,
+        "track_title_key": PROJECTS[g.project_key]["title_key"],
+        "brief_summary": brief.sections[0].items[0],
+        "brief_finding": brief.sections[1].items[0],
+        "matrix_columns": homepage["matrix"]["columns"][:2],
+        "slides_title": slides.slides[0].title,
+        "slide_bullets": slides.slides[0].bullets[:2],
+        "metrics": homepage["metrics"],
+    }
+
+
 @APP.route("/")
 def index():
     run = _load_demo_run()
     return render_template("index.html", run=run, homepage=_homepage_payload(run))
+
+
+@APP.route("/poster")
+def poster():
+    run = _load_demo_run()
+    return render_template("poster.html", run=run, poster=_poster_payload(run))
 
 
 @APP.route("/sources")

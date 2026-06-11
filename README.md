@@ -7,7 +7,7 @@ The codebase stays intentionally neutral while the brand is still provisional.
 >
 > 把杂乱资料变成带引用、可交付的成果。
 
-![CiteCraft demo homepage](docs/assets/academia-en-home.png)
+![CiteCraft poster route](docs/assets/poster-academia-en.png)
 
 This project is building an `Academia-first, not academia-only` workbench for source-heavy knowledge work.
 它以学术场景作为首个演示入口，但底层结构从第一天就支持扩展到 research、consulting、policy 和更广的知识工作场景。
@@ -24,16 +24,17 @@ The product goal is not "better chat." The goal is a deterministic, traceable pa
 
 ## What It Looks Like
 
-Real screenshots from the local demo shell:
+Real screenshots from the local demo shell and poster route:
 
 <p align="center">
-  <img src="docs/assets/research-zh-home.png" alt="Chinese research consulting homepage" width="49%" />
+  <img src="docs/assets/poster-research-zh.png" alt="Chinese research consulting poster" width="49%" />
   <img src="docs/assets/brief-trace-en.png" alt="Brief with trace panel" width="49%" />
 </p>
 
 - `Academia` track: journal club and literature synthesis with cited deliverables.
 - `Research / Consulting` track: strategy brief prep from reports, market pages, and analyst notes.
 - `Trace Panel`: every important output node points back to a source chunk.
+- `Poster route`: a share-friendly surface built from the same real demo data.
 
 ## Why This Repo Is Different
 
@@ -84,6 +85,8 @@ Try:
 
 - `http://127.0.0.1:5000/?lang=en&project=academia-demo-01`
 - `http://127.0.0.1:5000/?lang=zh&project=research-demo-01`
+- `http://127.0.0.1:5000/poster?lang=en&project=academia-demo-01`
+- `http://127.0.0.1:5000/poster?lang=zh&project=research-demo-01`
 
 ## Optional Model Provider
 
