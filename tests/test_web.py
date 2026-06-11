@@ -27,7 +27,8 @@ def test_homepage_defaults_to_english_and_uses_visual_asset():
     html = response.get_data(as_text=True)
     assert "Turn messy sources into cited deliverables." in html
     assert "把杂乱资料变成带引用、可交付的成果。" not in html
-    assert "hero-workbench.svg" in html
+    assert "proofboard" in html
+    assert "Open brief" in html
 
 
 def test_homepage_can_switch_to_chinese_and_persist_links():

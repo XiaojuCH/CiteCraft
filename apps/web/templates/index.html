@@ -11,10 +11,59 @@
       <span class="hero-badge">{{ t("hero_badge_trace") }}</span>
       <span class="hero-badge">{{ t("hero_badge_markdown") }}</span>
     </div>
+    <div class="hero-actions">
+      <a class="hero-cta primary" href="{{ shell_url('deliverable_view', deliverable_key='brief') }}">{{ t("hero_cta_primary") }}</a>
+      <a class="hero-cta secondary" href="{{ shell_url('sources_index') }}">{{ t("hero_cta_secondary") }}</a>
+    </div>
   </div>
-  <div class="hero-visual card">
-    <img class="hero-illustration" src="{{ url_for('static', filename='hero-workbench.svg') }}" alt="{{ t('hero_illustration_alt') }}" />
-    <div class="metric-strip">
+
+  <div class="proofboard">
+    <article class="proof-card proof-brief">
+      <div class="proof-topline">
+        <span class="kicker">cited brief</span>
+        <span class="trace-chip">{{ homepage.brief.summary.trace_refs[0].locator.label }}</span>
+      </div>
+      <h3>{{ t("preview_brief_title") }}</h3>
+      <p class="proof-text proof-text-strong">{{ homepage.brief.summary.text }}</p>
+      <div class="proof-divider"></div>
+      <p class="proof-label">{{ t("preview_key_finding") }}</p>
+      <p class="proof-text">{{ homepage.brief.finding.text }}</p>
+    </article>
+
+    <article class="proof-card proof-matrix">
+      <div class="proof-topline">
+        <span class="kicker">literature matrix</span>
+        <span class="trace-chip">{{ homepage.matrix.row_label }}</span>
+      </div>
+      <h3>{{ t("preview_matrix_title") }}</h3>
+      <div class="mini-table">
+        {% for column in homepage.matrix.columns %}
+        <div class="mini-table-row">
+          <div class="mini-table-key">{{ column.label }}</div>
+          <div class="mini-table-value">{{ column.value }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </article>
+
+    <article class="proof-card proof-slides">
+      <div class="proof-topline">
+        <span class="kicker">slides</span>
+        <span class="trace-chip">HTML / Markdown</span>
+      </div>
+      <h3>{{ t("preview_slides_title") }}</h3>
+      <p class="slide-preview-title">{{ homepage.slides.title }}</p>
+      <ul class="slide-preview-list">
+        {% for bullet in homepage.slides.bullets %}
+        <li>{{ bullet.text }}</li>
+        {% endfor %}
+      </ul>
+      <div class="proof-divider"></div>
+      <p class="proof-label">{{ t("preview_speaker_note") }}</p>
+      <p class="proof-text">{{ homepage.slides.notes[0].text }}</p>
+    </article>
+
+    <div class="metric-strip metric-strip-board">
       {% for metric in homepage.metrics %}
       <div class="metric-pill">
         <strong>{{ metric.value }}</strong>
@@ -26,12 +75,6 @@
 </section>
 
 <section class="section-heading">
-  <p class="eyebrow">{{ t("section_visual_proof_eyebrow") }}</p>
-  <h2>{{ t("section_visual_proof_title") }}</h2>
-  <p class="lede">{{ t("section_visual_proof_lede") }}</p>
-</section>
-
-<section class="section-heading">
   <p class="eyebrow">{{ t("track_eyebrow") }}</p>
   <h2>{{ t("track_heading") }}</h2>
   <p class="lede">{{ t("track_lede") }}</p>
@@ -40,61 +83,14 @@
 <section class="track-grid">
   {% for project in project_options %}
   <a class="track-card {% if project.key == project_key %}active{% endif %}" href="{{ toggle_project_url(project.key) }}">
-    <div class="preview-topline">
+    <div class="proof-topline">
       <span class="kicker">{{ project.key }}</span>
       <span class="trace-chip">{% if project.key == project_key %}{{ t("track_current") }}{% else %}{{ t("track_open") }}{% endif %}</span>
     </div>
     <h3>{{ t(project.title_key) }}</h3>
-    <p class="preview-text">{{ t(project.desc_key) }}</p>
+    <p class="proof-text">{{ t(project.desc_key) }}</p>
   </a>
   {% endfor %}
-</section>
-
-<section class="preview-grid">
-  <a class="preview-card" href="{{ shell_url('deliverable_view', deliverable_key='brief') }}">
-    <div class="preview-topline">
-      <span class="kicker">cited brief</span>
-      <span class="trace-chip">{{ homepage.brief.summary.trace_refs[0].locator.label }}</span>
-    </div>
-    <h3>{{ t("preview_brief_title") }}</h3>
-    <p class="preview-text">{{ homepage.brief.summary.text }}</p>
-    <div class="preview-divider"></div>
-    <p class="preview-subtitle">{{ t("preview_key_finding") }}</p>
-    <p class="preview-text">{{ homepage.brief.finding.text }}</p>
-  </a>
-
-  <a class="preview-card preview-matrix" href="{{ shell_url('deliverable_view', deliverable_key='literature_matrix') }}">
-    <div class="preview-topline">
-      <span class="kicker">literature matrix</span>
-      <span class="trace-chip">{{ homepage.matrix.row_label }}</span>
-    </div>
-    <h3>{{ t("preview_matrix_title") }}</h3>
-    <div class="mini-table">
-      {% for column in homepage.matrix.columns %}
-      <div class="mini-table-row">
-        <div class="mini-table-key">{{ column.label }}</div>
-        <div class="mini-table-value">{{ column.value }}</div>
-      </div>
-      {% endfor %}
-    </div>
-  </a>
-
-  <a class="preview-card preview-slides" href="{{ shell_url('deliverable_view', deliverable_key='slides') }}">
-    <div class="preview-topline">
-      <span class="kicker">slides</span>
-      <span class="trace-chip">HTML / Markdown</span>
-    </div>
-    <h3>{{ t("preview_slides_title") }}</h3>
-    <p class="slide-preview-title">{{ homepage.slides.title }}</p>
-    <ul class="slide-preview-list">
-      {% for bullet in homepage.slides.bullets %}
-      <li>{{ bullet.text }}</li>
-      {% endfor %}
-    </ul>
-    <div class="preview-divider"></div>
-    <p class="preview-subtitle">{{ t("preview_speaker_note") }}</p>
-    <p class="preview-text">{{ homepage.slides.notes[0].text }}</p>
-  </a>
 </section>
 
 <section class="grid">

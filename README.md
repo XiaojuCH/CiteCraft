@@ -7,7 +7,7 @@ The codebase stays intentionally neutral while the brand is still provisional.
 >
 > 把杂乱资料变成带引用、可交付的成果。
 
-![CiteCraft workbench overview](apps/web/static/hero-workbench.svg)
+![CiteCraft demo homepage](docs/assets/academia-en-home.png)
 
 This project is building an `Academia-first, not academia-only` workbench for source-heavy knowledge work.
 它以学术场景作为首个演示入口，但底层结构从第一天就支持扩展到 research、consulting、policy 和更广的知识工作场景。
@@ -27,9 +27,8 @@ The product goal is not "better chat." The goal is a deterministic, traceable pa
 Real screenshots from the local demo shell:
 
 <p align="center">
-  <img src="docs/assets/academia-en-home.png" alt="English academia homepage" width="32%" />
-  <img src="docs/assets/research-zh-home.png" alt="Chinese research consulting homepage" width="32%" />
-  <img src="docs/assets/brief-trace-en.png" alt="Brief with trace panel" width="32%" />
+  <img src="docs/assets/research-zh-home.png" alt="Chinese research consulting homepage" width="49%" />
+  <img src="docs/assets/brief-trace-en.png" alt="Brief with trace panel" width="49%" />
 </p>
 
 - `Academia` track: journal club and literature synthesis with cited deliverables.
