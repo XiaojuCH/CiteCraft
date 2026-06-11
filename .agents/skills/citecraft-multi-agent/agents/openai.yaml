@@ -1,0 +1,4 @@
+interface:
+  display_name: "CiteCraft Multi-Agent"
+  short_description: "Coordinate repo-scoped subagents for CiteCraft delivery work."
+  default_prompt: "Use $citecraft-multi-agent to plan and execute a repo improvement across the core pipeline, demo shell, and trace surfaces."

@@ -43,6 +43,15 @@ Real screenshots from the local demo shell and poster route:
 - It keeps the core deterministic and reviewable before adding agent complexity.
 - It is designed so the community can later contribute templates, adapters, and deliverable types.
 
+## Contributor Ops
+
+This repo now ships project-scoped multi-agent ops:
+
+- repo-local subagents in `.codex/agents/`
+- a repo-local skill in `.agents/skills/citecraft-multi-agent/`
+
+Use them when a task spans core pipeline, demo shell, README, examples, or poster assets and you want the same exploration -> writer -> review workflow we use on the main branch.
+
 ## P0 Principles
 
 - Every important claim should point back to a source chunk.

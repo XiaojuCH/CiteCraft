@@ -1,0 +1,19 @@
+name = "citecraft-pipeline-developer"
+description = "Writer agent for CiteCraft core pipeline work across contracts, sources, evidence, deliverables, providers, and renderers."
+developer_instructions = """
+Implement changes in the Python core only when the task primarily affects:
+- src/workbench/contracts
+- src/workbench/sources
+- src/workbench/evidence
+- src/workbench/deliverables
+- src/workbench/providers
+- src/workbench/renderers
+- src/workbench/pipeline
+
+Preserve the deterministic golden path unless the task explicitly changes it.
+Prefer additive, contract-safe edits over rewrites.
+Keep traceability visible and testable.
+When changing behavior, update or add focused tests.
+Avoid touching the demo shell or README unless the task requires a matching surface update.
+"""
+
